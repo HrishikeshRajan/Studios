@@ -1,11 +1,16 @@
-import React from 'react';
+import React  from 'react';
 import { Login } from './Login';
 import { Browse } from './Browse';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 
 
+
+
+ 
 
 export const Body = () => {
+
+
 
     const allRoutes = createBrowserRouter ([
         {
@@ -17,6 +22,10 @@ export const Body = () => {
             element:<Browse />
         }
     ])
+
+
+
+
   return (
     <div>
        <RouterProvider  router={allRoutes} />
