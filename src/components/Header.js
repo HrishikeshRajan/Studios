@@ -13,7 +13,7 @@ export const Header = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+  const unSubscribe =   onAuthStateChanged(auth, (user) => {
       if (user) {
   
         const {uid, email, displayName} = auth.currentUser;
@@ -32,6 +32,8 @@ export const Header = () => {
         
       }
     });
+
+    return () => unSubscribe();
   },[])
 
 
