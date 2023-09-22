@@ -27,7 +27,7 @@ export const Body = () => {
 
 
   return (
-    <div>
+    <div >
        <RouterProvider  router={allRoutes} />
     </div>
   );

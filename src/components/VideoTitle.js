@@ -7,10 +7,10 @@ const VideoTitle = (props) => {
     <p className="py-6 text-lg w-1/3 text-white">{props.overview}</p>
 
     <div className="">
-      <button className="bg-gray-500 text-white px-4 py-2 m-1 rounded bg-opacity-50 hover:bg-slate-500">
+      <button className="bg-white text-black px-4 py-2 m-1 rounded  hover:bg-slate-500">
         Play ▶️
       </button>
-      <button className="bg-gray-500 text-white px-4 py-2 rounded bg-opacity-50 hover:bg-slate-500">
+      <button className="bg-gray-500 text-black px-4 py-2 rounded bg-opacity-50 hover:bg-slate-500">
         More Info
       </button>
     </div>
