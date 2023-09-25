@@ -127,7 +127,6 @@ export const Login = () => {
         </button>
 
         <p className="font-normal py-4">
-          {' '}
           {LogginForm ? 'New to Frames?' : 'Already have an account?'}{' '}
           <span onClick={() => handleForm()} className="cursor-pointer">
             {LogginForm ? 'Signup' : 'Sign In'}
