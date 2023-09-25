@@ -78,13 +78,14 @@ export const Login = () => {
         <img
           src={Background}
           alt="logo"
+          className = 'w-screen h-screen object-cover'
         />
       </div>
       <form
         action=""
         method="post"
         onSubmit={(e) => e.preventDefault()}
-        className=" flex flex-col text-white absolute p-12 w-3/12 bg-opacity-80 bg-black my-36 mx-auto right-0 left-0 "
+        className=" flex flex-col text-white absolute p-7 mx-2 rounded md:p-12 md:w-3/12 bg-opacity-80 bg-black my-36 md:mx-auto right-0 left-0 "
       >
         <h1 className="text-3xl font-bold p-2">
           {LogginForm ? 'Sign In' : 'Sign Up'}

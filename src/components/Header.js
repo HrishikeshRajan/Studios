@@ -53,10 +53,10 @@ export const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="flex absolute px-8 py-2 w-screen  bg-gradient-to-b from-black z-10 justify-between">
-      <div className="">
+    <div className="flex absolute px-8 py-2 w-screen  bg-gradient-to-b from-black z-10 flex-col md:flex-row justify-between">
+      <div className="flex justify-center md: justify-start">
         <img
-          className="w-44"
+          className="w-14  md:w-44"
           src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
           alt="logo"
         />
@@ -68,7 +68,7 @@ export const Header = () => {
             <div className="flex px-3 my-4 justify-end">
               <select
                 name=""
-                className="rounded"
+                className="rounded bg-black text-white"
                 onChange={handleLanguage}
                 id=""
               >
