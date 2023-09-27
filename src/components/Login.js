@@ -20,7 +20,6 @@ export const Login = () => {
   const fullname = useRef(null);
   const dispatch = useDispatch();
 
-
   const handleFormAction = () => {
     const name = fullname.current ? fullname.current.value : null;
     const errors = validate(email.current.value, password.current.value, name);
@@ -78,7 +77,7 @@ export const Login = () => {
         <img
           src={Background}
           alt="logo"
-          className = 'w-screen h-screen object-cover'
+          className="w-screen h-screen object-cover"
         />
       </div>
       <form

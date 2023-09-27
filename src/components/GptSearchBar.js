@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const GptSearchBar = () => {
   const appConfig = useSelector((store) => store.appConfig);
   return (
-    <div className="pt-[40%] md:pt-[20%] flex justify-center ">
+    <div className="pt-[40%] md:pt-[10%] flex justify-center ">
       <form
         action=""
         className=" w-screen mx-1 md:w-1/2 bg-black rounded grid grid-cols-12"

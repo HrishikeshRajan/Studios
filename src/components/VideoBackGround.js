@@ -8,16 +8,11 @@ const VideoBackGround = (props) => {
   const trailer = useSelector((store) => store.movies.trailers);
   useMovieTrailer(props)
 
-
+if(trailer === null) return
 
   return (
     <div className='w-screen'>
-      <iframe
-        src={'https://www.youtube.com/embed/' + trailer?.key + '?autoplay=1&mute=1&enablejsapi=1&controls=0&&showinfo=0&loop=1'}
-        title="Elemental | Official Trailer"
-        className='w-screen aspect-video '
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-      ></iframe>
+      <iframe   className='w-screen aspect-video ' src={'https://www.youtube.com/embed/' + trailer?.key + '?rel=0?version=3&autoplay=1&controls=0&&showinfo=0&loop=1​&&mute=1' } title={trailer.name}  frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
     </div>
   );
 };

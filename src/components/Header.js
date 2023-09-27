@@ -1,46 +1,26 @@
 import React, { useEffect } from 'react';
 import defaultUser from '../images/5856.jpg';
+import logo from '../images/streams.png';
 import { signOut } from 'firebase/auth';
 import { auth } from '../utils/firbase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser, removeUser } from '../utils/userSlice';
-import { onAuthStateChanged } from 'firebase/auth';
+
 import { toggleGptSearchView } from '../utils/gptSlice';
 import { SUPPORTED_LANGUAGES } from '../utils/languageConstant';
 import { changeLanguage } from '../utils/appConfigSlice';
+import useAuthenticate from '../hooks/useAuthentications';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const dispatch = useDispatch();
+  const user = useSelector((store) => store.user);
+  const gpt = useSelector((store) => store.gpt.showGptSearch);
 
-  useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const { uid, email, displayName } = auth.currentUser;
-
-        dispatch(addUser({ uid, email, displayName }));
-
-        navigate('/browse');
-      } else {
-        // User is signed out
-        // ...
-
-        dispatch(removeUser());
-
-        navigate('/');
-      }
-    });
-
-    return () => unSubscribe();
-  }, []);
-
+  useAuthenticate();
   const handleGptSearchClick = () => {
     dispatch(toggleGptSearchView());
   };
 
-  const navigate = useNavigate();
-  const user = useSelector((store) => store.user);
-  const gpt = useSelector((store) => store.gpt.showGptSearch);
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {})
@@ -52,17 +32,46 @@ export const Header = () => {
   const handleLanguage = (e) => {
     dispatch(changeLanguage(e.target.value));
   };
+
+  const handleMovieClick = () => {
+    console.log(gpt);
+    if (!gpt) {
+      dispatch(toggleGptSearchView());
+    }
+  };
+  const handleHomePageTab = () => {
+    if (gpt) {
+      dispatch(toggleGptSearchView());
+    }
+  };
+
+  useEffect(() => {}, [gpt]);
+
   return (
     <div className="flex absolute px-8 py-2 w-screen  bg-gradient-to-b from-black z-10 flex-col md:flex-row justify-between">
-      <div className="flex justify-center md: justify-start">
-        <img
-          className="w-14  md:w-44"
-          src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-          alt="logo"
-        />
+      <div className="flex justify-center md:justify-start">
+        <img className="w-14  md:w-20 rounded-xl" src={logo} alt="logo" />
       </div>
 
-      {user && (
+      <div className=" md:w-80 md:flex relative md:justify-center hidden ">
+        <ul className="flex justify-between w-full absolute bottom-1/3 ">
+          <Link to={'/browse'}>
+            <li className="font-medium text-white" onClick={handleHomePageTab}>
+              Home
+            </li>
+          </Link>
+          <Link to={'/browse'}>
+            <li className="font-medium text-white" onClick={handleMovieClick}>
+              Movies
+            </li>
+          </Link>
+          <Link to={'/profile'}>
+            <li className="font-medium text-white">Profile</li>
+          </Link>
+        </ul>
+      </div>
+
+      {user.user && (
         <div className="flex justify-between">
           {gpt && (
             <div className="flex px-3 my-4 justify-end">
@@ -84,7 +93,7 @@ export const Header = () => {
             className="px-3 py-1 my-4 rounded bg-purple-900 mr-6 text-white"
             onClick={handleGptSearchClick}
           >
-            {gpt?"Home":"Search GPT"}
+            {gpt ? 'Home' : 'Search GPT'}
           </button>
 
           <div className="flex flex-col items-center">

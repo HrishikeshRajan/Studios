@@ -7,9 +7,10 @@ import useTopRatedMovies from '../hooks/useTopRated';
 import useUpCommingMovies from '../hooks/useUpComming';
 import GptSearch from './GptSearch';
 import { useSelector } from 'react-redux';
+import BottomBar from './BottomBar';
 
 export const Browse = () => {
-  //Check is subscribing to specific attribute will work or not
+
   usePopularMovies();
   useTopRatedMovies();
   useUpCommingMovies();
@@ -28,6 +29,7 @@ export const Browse = () => {
           <SecondaryContainer />
         </>
       )}
+      <BottomBar />
     </div>
   );
 };
