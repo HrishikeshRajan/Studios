@@ -10,6 +10,7 @@ import { SUPPORTED_LANGUAGES } from '../utils/languageConstant';
 import { changeLanguage } from '../utils/appConfigSlice';
 import useAuthenticate from '../hooks/useAuthentications';
 import { Link } from 'react-router-dom';
+import useSignOut from '../hooks/useSignout';
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -21,13 +22,7 @@ export const Header = () => {
     dispatch(toggleGptSearchView());
   };
 
-  const handleSignOut = () => {
-    signOut(auth)
-      .then(() => {})
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+   const signout = useSignOut()
 
   const handleLanguage = (e) => {
     dispatch(changeLanguage(e.target.value));
@@ -103,7 +98,7 @@ export const Header = () => {
             <button
               className="text-slate-200"
               onClick={() => {
-                handleSignOut();
+                signout();
               }}
             >
               SignOut

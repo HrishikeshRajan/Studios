@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faAngleRight} from '@fortawesome/free-solid-svg-icons';
+import useSignOut from '../hooks/useSignout';
 
 const ProfileTabs = () => {
   const [tab, setTab] = useState('profile');
+  const signout = useSignOut()
 
   const handleTabEvent = (e) => {
     setTab(e.target.getAttribute('data-tab'));
@@ -54,7 +56,7 @@ const ProfileTabs = () => {
               </Link>
             </div>
             <div className="border-2 border-slate-300  p-7 my-2 rounded">
-              <Link to={'#'}>
+              <Link to={'#'} onClick={()=>signout()}>
                 <h4 className="font-bold text-lg text-white">       <FontAwesomeIcon icon={faRightFromBracket} /> Signout </h4>
               </Link>
             </div>

@@ -81,12 +81,7 @@ const DeleteUser = () => {
                   {msgError} <FontAwesomeIcon icon={faCircleExclamation} />
                 </p>
               )}
-              {msgSuccess && (
-                <p className="text-green-500 border-1 p-2 border-green-800 bg-green-100 ">
-                  {msgSuccess} <FontAwesomeIcon icon={faCheck} />
-                </p>
-              )}
-
+          
               <input
                 type="password"
                 name="password"
