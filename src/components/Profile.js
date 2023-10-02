@@ -1,19 +1,12 @@
-import React from 'react'
+import React from 'react';
+import ProfileTabs from './ProfileTabs';
 
-
-const Profile = ({user}) => {
-
-if(user === null) return
-const {displayName, email} = user
-
-
-    return (
-    <div className='bg-slate-500 p-20'>
-
-      <h1>{displayName}</h1>
-      <h2>{email}</h2>
+const Profile = () => {
+  return (
+    <div className="w-screen h-screen ">
+      <ProfileTabs />
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

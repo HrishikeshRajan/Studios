@@ -1,21 +1,17 @@
 import React from 'react';
 import { Header } from './Header';
 import BottomBar from './BottomBar';
-import { useSelector } from 'react-redux';
 import Profile from './Profile';
 
-
 const UserProfile = () => {
-  const gpt = useSelector((store) => store.gpt.showGptSearch);
-  const user = useSelector((store) => store.user.user);
   return (
-    <div className="relative">
+    <div className="relative bg-slate-950">
       <Header />
-      {!gpt && (
-        <div className="w-screen pt-52 flex justify-center ">
-         <Profile user={user} />
-        </div>
-      )}
+
+      <div className="w-screen md:pt-40 flex justify-center ">
+        <Profile />
+      </div>
+
       <BottomBar />
     </div>
   );

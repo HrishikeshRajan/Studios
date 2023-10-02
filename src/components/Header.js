@@ -62,11 +62,11 @@ export const Header = () => {
           </Link>
           <Link to={'/browse'}>
             <li className="font-medium text-white" onClick={handleMovieClick}>
-              Movies
+              Search
             </li>
           </Link>
-          <Link to={'/profile'}>
-            <li className="font-medium text-white">Profile</li>
+          <Link to={'/account'}>
+            <li className="font-medium text-white">Account</li>
           </Link>
         </ul>
       </div>
@@ -76,10 +76,8 @@ export const Header = () => {
           {gpt && (
             <div className="flex px-3 my-4 justify-end">
               <select
-                name=""
                 className="rounded bg-black text-white"
                 onChange={handleLanguage}
-                id=""
               >
                 {SUPPORTED_LANGUAGES.map((language) => (
                   <option key={language.code} value={language.code}>
@@ -93,7 +91,7 @@ export const Header = () => {
             className="px-3 py-1 my-4 rounded bg-purple-900 mr-6 text-white"
             onClick={handleGptSearchClick}
           >
-            {gpt ? 'Home' : 'Search GPT'}
+            {gpt ? 'Home' : 'Ask to GPT'}
           </button>
 
           <div className="flex flex-col items-center">

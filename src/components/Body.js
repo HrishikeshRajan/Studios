@@ -3,6 +3,7 @@ import { Login } from './Login';
 import { Browse } from './Browse';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import UserProfile from './UserProfile';
+import EditProfile from './EditProfile';
 
 
 
@@ -19,8 +20,17 @@ export const Body = () => {
       element: <Browse />,
     },
     {
-      path: '/profile',
+      path: '/manage',
+      element: <EditProfile />,
+    },
+    {
+      path: '/account',
       element: <UserProfile />,
+    
+    },
+    {
+      path: "/profile",
+      element: <EditProfile />,
     },
   ]);
 

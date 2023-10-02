@@ -17,7 +17,12 @@ const useAuthenticate = () => {
 
         dispatch(addUser({ uid, email, displayName }));
 
-        navigate(location.pathname);
+        if(location.pathname === '/'){
+          navigate('/browse')
+        }else{
+          navigate(location.pathname);
+        }
+      
       } else {
         dispatch(removeUser());
 
