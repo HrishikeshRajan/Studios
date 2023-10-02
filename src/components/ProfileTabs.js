@@ -45,7 +45,7 @@ const ProfileTabs = () => {
         {tab === 'account' && (
           <div className="flex flex-col" id="tab2">
             <div className="border-2 border-slate-300 p-7 my-2 rounded">
-              <Link to={'/account'}>
+              <Link to={'/account/delete'}>
                 <h4 className="font-bold text-lg text-white">Delete Account  </h4>
                 <p className="my-4 text-white">
                   Your streams account and all data releated to this account

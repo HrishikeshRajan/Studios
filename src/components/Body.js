@@ -4,6 +4,7 @@ import { Browse } from './Browse';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import UserProfile from './UserProfile';
 import EditProfile from './EditProfile';
+import DeleteUser from './DeleteUser';
 
 
 
@@ -31,6 +32,10 @@ export const Body = () => {
     {
       path: "/profile",
       element: <EditProfile />,
+    },
+    {
+      path: "/account/delete",
+      element: <DeleteUser />,
     },
   ]);
 

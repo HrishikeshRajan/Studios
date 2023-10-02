@@ -96,18 +96,16 @@ export const Login = () => {
             type="text"
             name="fullname"
             ref={fullname}
-            placeholder="Enter fulname"
-            id=""
+            placeholder="Enter fullname"
             className="p-2 my-2 w-full bg-slate-700"
           />
         )}
 
         <input
-          type="text"
+          type="email"
           name="email"
           ref={email}
           placeholder="Email Address"
-          id=""
           className="p-2 my-2 w-full bg-slate-700"
         />
         <input
@@ -115,7 +113,6 @@ export const Login = () => {
           ref={password}
           name="password"
           placeholder="Password"
-          id=""
           className="p-2 my-2 w-full bg-slate-700"
         />
         <button
