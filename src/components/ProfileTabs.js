@@ -49,7 +49,7 @@ const ProfileTabs = () => {
             <div className="border-2 border-slate-300 p-7 my-2 rounded">
               <Link to={'/account/delete'}>
                 <h4 className="font-bold text-lg text-white">Delete Account  </h4>
-                <p className="my-4 text-white">
+                <p className="my-4 text-white text-justify">
                   Your streams account and all data releated to this account
                   will be permanently deleted <FontAwesomeIcon icon={faAngleRight} />
                 </p>

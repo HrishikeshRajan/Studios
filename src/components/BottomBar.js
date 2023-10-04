@@ -24,7 +24,7 @@ const BottomBar = () => {
 
   };
   return (
-    <div className="fixed block md:hidden bg-white p-3 left-0 right-0 bottom-0 z-50">
+    <div className="fixed block lg:hidden bg-gray-950 text-white p-3 left-0 right-0 bottom-0 z-50">
       <ul className="flex justify-evenly">
         <Link to={'/browse'} onClick={handleHomePageTab}>
           <li>
@@ -36,7 +36,7 @@ const BottomBar = () => {
             <FontAwesomeIcon icon={faSearch} />
           </li>
         </Link>
-        <Link to={'/profile'}>
+        <Link to={'/account'}>
           <li>
             <FontAwesomeIcon icon={faUser} />
           </li>
