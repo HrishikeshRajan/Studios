@@ -9,7 +9,7 @@ const VideoTitle = (props) => {
       <h1 className=" text-xl  my-2 md:mt-32 md:text-6xl font-bold text-white">
         {props.title}
       </h1>
-      <p className="py-6 text-xs w-screen md:text-lg md:w-1/3 text-white hidden xl:block ">
+      <p className="py-6 text-xs w-screen md:text-lg md:w-2/4 text-white hidden xl:block ">
         {props.overview}
       </p>
 
