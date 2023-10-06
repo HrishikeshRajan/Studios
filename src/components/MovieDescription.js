@@ -9,7 +9,7 @@ const MovieDescription = () => {
   if (movie === null) return;
   const genresLength = movie.genres.length - 1;
   return (
-    <div className="text-white p-10 py-36 absolute z-10 top-15 bg-gradient-to-r from-black    h-screen">
+    <div className="text-white p-10 py-36 relative z-10 top-15 bg-gradient-to-r from-black    h-screen">
       <ul>
         <li className="mb-8 p-2">
           <h1 className="text-5xl font-extrabold">{movie.title}</h1>

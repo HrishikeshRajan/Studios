@@ -3,14 +3,14 @@ export const urlPopular = 'https://api.themoviedb.org/3/movie/popular?language=e
 export const urlTopRated = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
 export const urlUpComming = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
 
-export const getMovieImageUrl = (id) => {
-  return `https://api.themoviedb.org/3/movie/${id}/images`;
-}
+
 export const getMovieUrl = (id) => {
   return `https://api.themoviedb.org/3/movie/${id}`;
 }
 
-
+export const getMovieCastUrl = (id) => {
+  return `https://api.themoviedb.org/3/movie/${id}/credits`
+}
 const options = {
   method: 'GET',
   headers: {

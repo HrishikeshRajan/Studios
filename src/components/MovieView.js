@@ -4,10 +4,12 @@ import { Header } from './Header';
 
 import MoviePoster from './MoviePoster';
 import MovieDescription from './MovieDescription';
-import useMovieAndImages from '../hooks/useMovieAndImages';
+
+import MoreInfo from './MoreInfo';
+import useMovie from '../hooks/useMovie';
 
 const MovieView = () => {
-  useMovieAndImages();
+  useMovie();
 
   return (
     <div>
@@ -15,6 +17,7 @@ const MovieView = () => {
       <div className="relative">
         <MoviePoster />
         <MovieDescription />
+        <MoreInfo />
       </div>
     </div>
   );
