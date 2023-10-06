@@ -38,8 +38,8 @@ const MovieDescription = () => {
         </li>
       </ul>
 
-      <button className="p-3 my-4 font-bold rounded bg-white text-black">
-        <FontAwesomeIcon icon={faPlay} /> Trailer
+      <button className="p-3 my-4 font-bold border-2 rounded hover:bg-white hover:text-black">
+        <FontAwesomeIcon icon={faPlay}  /> Trailer
       </button>
     </div>
   );
