@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const VideoTitle = (props) => {
   return (
@@ -14,9 +15,11 @@ const VideoTitle = (props) => {
         <button className="bg-white text-black px-4 py-1 md:py-2 mx-1  rounded  hover:bg-slate-500">
           Play ▶️
         </button>
-        <button className="bg-gray-500 text-black px-4  py-1 md:py-2 mx-1 rounded bg-opacity-95 hover:bg-slate-500">
-          More Info
-        </button>
+        <Link to={'/movie/' + props.id}>
+          <button className="bg-gray-500 text-black px-4  py-1 md:py-2 mx-1 rounded bg-opacity-95 hover:bg-slate-50">
+            More Info
+          </button>
+        </Link>
       </div>
     </div>
   );
