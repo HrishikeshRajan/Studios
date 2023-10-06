@@ -79,7 +79,7 @@ export const Header = () => {
               <li
                 className={`${
                   user.activeTab === NAVBAR_OPTIONS.Search
-                    ? 'bg-white bg-opacity-40 text-white '
+                    ? 'bg-white bg-opacity-80 text-white '
                     : ''
                 }  ${
                   user.activeTab !== NAVBAR_OPTIONS.Search &&
@@ -105,11 +105,11 @@ export const Header = () => {
             {
               <div className="flex px-3 my-4 justify-end">
                 <select
-                  className="rounded bg-black text-white border-red-600"
+                  className="rounded bg-black text-white border-0"
                   onChange={handleLanguage}
                 >
                   {SUPPORTED_LANGUAGES.map((language) => (
-                    <option key={language.code} value={language.code}>
+                    <option key={language.code} value={language.code} className='bg-red-300 border-0'>
                       {language.name}
                     </option>
                   ))}

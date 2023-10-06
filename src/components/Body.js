@@ -5,12 +5,14 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import UserProfile from './UserProfile';
 import EditProfile from './EditProfile';
 import DeleteUser from './DeleteUser';
+import MovieView from './MovieView';
 
 
 
 
 
 export const Body = () => {
+
   const allRoutes = createBrowserRouter([
     {
       path: '/',
@@ -37,10 +39,14 @@ export const Body = () => {
       path: "/account/delete",
       element: <DeleteUser />,
     },
+    {
+      path: "/movie/:id",
+      element: <MovieView />,
+    },
   ]);
 
   return (
-    <div>
+    <div className='bg-black'>
       <RouterProvider router={allRoutes} />
     </div>
   );
