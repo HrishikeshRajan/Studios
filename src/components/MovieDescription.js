@@ -3,10 +3,16 @@ import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { getRunTimeInHours, extractYear } from '../utils/movieDetails';
+import { Link } from 'react-router-dom';
+import { encodeURI } from '../utils/uriEncoding';
 
 const MovieDescription = () => {
   const movie = useSelector((store) => store.movies.selectedMovie);
   if (movie === null) return;
+
+  const trailerUri = '/trailer/' + movie.id + '/' + movie.title;
+  const modifiedTrailerUri = encodeURI(trailerUri);
+
   const genresLength = movie.genres.length - 1;
   return (
     <div className="text-white p-10 py-36 relative z-10 top-15 bg-gradient-to-r from-black    h-screen">
@@ -32,15 +38,17 @@ const MovieDescription = () => {
         <li className="p-2 flex">
           {movie.genres.map((item, index) => (
             <span className="text-white font-bold pr-5" key={item.id}>
-              {item.name + (index === genresLength? '' : ' | ')}
+              {item.name + (index === genresLength ? '' : ' | ')}
             </span>
           ))}
         </li>
       </ul>
 
-      <button className="p-3 my-4 font-bold border-2 rounded hover:bg-white hover:text-black">
-        <FontAwesomeIcon icon={faPlay}  /> Trailer
-      </button>
+      <Link to={modifiedTrailerUri}>
+        <button className="p-3 my-4 font-bold border-2 rounded hover:bg-white hover:text-black">
+          <FontAwesomeIcon icon={faPlay} /> Trailer
+        </button>
+      </Link>
     </div>
   );
 };

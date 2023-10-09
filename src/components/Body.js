@@ -6,6 +6,7 @@ import UserProfile from './UserProfile';
 import EditProfile from './EditProfile';
 import DeleteUser from './DeleteUser';
 import MovieView from './MovieView';
+import Trailer from './Trailer';
 
 
 
@@ -42,6 +43,10 @@ export const Body = () => {
     {
       path: "/movie/:id",
       element: <MovieView />,
+    },
+    {
+      path: "/trailer/:id/:title",
+      element: <Trailer />,
     },
   ]);
 
