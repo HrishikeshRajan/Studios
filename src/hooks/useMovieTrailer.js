@@ -1,4 +1,4 @@
-import { addMovieTrailers } from '../utils/movieSlice';
+import { addMovieTrailers, removeMovieTrailer } from '../utils/movieSlice';
 import { OPTIONS } from '../utils/constants';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -32,6 +32,9 @@ const useMovieTrailer = (props) => {
       getMovieVideos();
     } catch (error) {
       console.log(error);
+    }
+    return () => {
+      dispatch(removeMovieTrailer())
     }
   }, []);
 };

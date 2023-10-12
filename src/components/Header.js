@@ -22,9 +22,6 @@ export const Header = () => {
   const gpt = useSelector((store) => store.gpt.showGptSearch);
 
   useAuthenticate();
-  // const handleGptSearchClick = () => {
-  //   dispatch(toggleGptSearchView());
-  // };
 
   const [toggle, setToggle] = useState(false);
   const signout = useSignOut();
@@ -109,7 +106,11 @@ export const Header = () => {
                   onChange={handleLanguage}
                 >
                   {SUPPORTED_LANGUAGES.map((language) => (
-                    <option key={language.code} value={language.code} className='bg-red-300 border-0'>
+                    <option
+                      key={language.code}
+                      value={language.code}
+                      className="bg-red-300 border-0"
+                    >
                       {language.name}
                     </option>
                   ))}

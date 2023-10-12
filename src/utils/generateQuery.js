@@ -1,0 +1,1 @@
+export const generateQuery = (query) => `Act as a Movie Recommendation system and suggest some movies for the query: ${query}. Only gives me names of 5 movies, comma separated like the example result given ahead. Example Result: HarryPotter, Twilight, Specter, The Invitation, Narnia`
