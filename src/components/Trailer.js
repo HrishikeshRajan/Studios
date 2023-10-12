@@ -20,7 +20,7 @@ const Trailer = () => {
   };
 
   return (
-    <div className="text-white  w-full h-full flex justify-center items-center relative group">
+    <div className="text-white  w-full h-full  flex justify-center items-center relative group">
       <button
         className="absolute right-52  bottom-2 hidden group-hover:flex text-white z-50  "
         data-tooltip-target="tooltip-default"
