@@ -5,10 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { generateQuery } from '../utils/generateQuery';
 import { OPTIONS, searchMovieByNameURI } from '../utils/constants';
 import { addMovieSuggestions } from '../utils/movieSlice';
+import GptMovieSuggestion from './GptMovieSuggestion';
 
 const GptSearchBar = () => {
   const appConfig = useSelector((store) => store.appConfig);
-  const [suggestedMovies, setSuggestedMovies] = useState(null)
+
+  const [suggestedMovies, setSuggestedMovies] = useState(null);
 
   const search = useRef();
 
@@ -18,51 +20,29 @@ const GptSearchBar = () => {
     try {
       const response = await fetch(searchMovieByNameURI(movie), OPTIONS);
       const json = await response.json();
-      return json; 
+      return json;
     } catch (error) {
       console.error('Error fetching movie:', error);
-      return undefined; 
+      return undefined;
     }
   };
-  
+
   const handleSearch = async () => {
-    // async function main() {
-    //   const chatCompletion = await openai.chat.completions.create({
-    //     messages: [{ role: 'user', content: query }],
-    //     model: 'gpt-3.5-turbo',
-    //   });
 
-    //   console.log(chatCompletion.choices);
-    // }
 
-    const result = generateQuery(search.current.value);
+    try {
 
-    const mockGPT = {
-      choices: [
-        {
-          message: {
-            content: 'Twilight, Narnia, Fast and Furious, Scream, Invitation',
-          },
-        },
-      ],
-    };
+      const result = await searchForMovies(search.current.value)
+      console.log(result)
+      if (result === null ) return;
 
-     try {
-      const movies = mockGPT.choices[0]?.message?.content.split(',');
-
-      const movieResult = movies.map((movie) => searchForMovies(movie));
-      const results = await Promise.all(movieResult);
-  
-      if(result.includes( undefined)) return
-  
-      setSuggestedMovies(results)
-      dispatch(addMovieSuggestions(results));
-     } catch (error) {
-      console.log('test best', error)
-     }
-
-    // main();
+      setSuggestedMovies(result);
+      dispatch(addMovieSuggestions(result));
+    } catch (error) {
+      console.log('test best', error);
+    }
   };
+
   return (
     <div className="pt-[40%] md:pt-[10%] flex justify-center ">
       <form
