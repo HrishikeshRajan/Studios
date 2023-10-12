@@ -46,7 +46,7 @@ export const Header = () => {
   useEffect(() => {}, [gpt]);
 
   return (
-    <nav className="bg-black">
+    <nav className="bg-black absolute top-0 left-0 right-0 z-50">
       <div className="container mx-auto 100 px-5 py-2 lg:flex items-center z-10">
         <div className="flex justify-center lg:justify-start">
           <Link to={'/browse'}>

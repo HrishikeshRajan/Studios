@@ -51,7 +51,7 @@ export const Body = () => {
   ]);
 
   return (
-    <div className='bg-black'>
+    <div className='bg-black '>
       <RouterProvider router={allRoutes} />
     </div>
   );
