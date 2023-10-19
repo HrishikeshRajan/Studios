@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Header } from './Header';
+import { Header } from './Header/Header';
 import { validate } from '../utils/validateInput';
 import {
   createUserWithEmailAndPassword,

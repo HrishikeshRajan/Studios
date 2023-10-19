@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header } from './Header';
+import { Header } from './Header/Header';
 
 import MoviePoster from './MoviePoster';
 import MovieDescription from './MovieDescription';

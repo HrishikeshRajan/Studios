@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import defaultUser from '../images/5856.jpg';
-import logo from '../images/streams.png';
+import defaultUser from '../../images/5856.jpg';
+import logo from '../../images/streams.png';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { toggleGptSearchView } from '../utils/gptSlice';
-import { SUPPORTED_LANGUAGES } from '../utils/languageConstant';
-import { changeLanguage } from '../utils/appConfigSlice';
-import useAuthenticate from '../hooks/useAuthentications';
+import { toggleGptSearchView } from '../../utils/gptSlice';
+import { SUPPORTED_LANGUAGES } from '../../utils/languageConstant';
+import { changeLanguage } from '../../utils/appConfigSlice';
+import useAuthenticate from '../../hooks/useAuthentications';
 import { Link } from 'react-router-dom';
-import useSignOut from '../hooks/useSignout';
+import useSignOut from '../../hooks/useSignout';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import { NAVBAR_OPTIONS } from '../utils/constants';
-import { addActiveTab } from '../utils/userSlice';
+import { NAVBAR_OPTIONS } from '../../utils/constants';
+import { addActiveTab } from '../../utils/userSlice';
 
 export const Header = () => {
   const dispatch = useDispatch();

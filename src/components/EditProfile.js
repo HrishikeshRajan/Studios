@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Header } from './Header';
+import { Header } from './Header/Header';
 import BottomBar from './BottomBar';
 import defaultUser from '../images/5856.jpg';
 import { updateProfile } from 'firebase/auth';
