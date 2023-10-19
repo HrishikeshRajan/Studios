@@ -89,7 +89,6 @@ export const Header = () => {
 
         {user.user && (
           <div className="lg:justify-between hidden lg:flex">
-
             {
               <div className="flex px-3 my-4 justify-end">
                 <select
@@ -117,25 +116,29 @@ export const Header = () => {
                 onClick={() => setToggle(!toggle)}
               />
 
-              <ul className="text-white text-xs p-3 bg-gray-900 absolute hidden group-hover:block  lg:right-0 top-11 rounded z-50">
-                <li className="hover:bg-gray-800 py-3 px-2 w-full ">
+              <div className="text-white text-xs p-3 bg-gray-900 absolute hidden group-hover:block   lg:right-0 top-11 rounded z-50">
+                <div className="hover:bg-gray-800 py-3 px-2 w-full ">
                   {user.user.email}
-                </li>
-                <li className="hover:bg-gray-800 py-3 px-2 w-full cursor-pointer ">
-                  <Link to={'/account'}> Account </Link>
-                </li>
-                <li>
+                </div>
+
+                <Link to={'/account'}>
+                  <div className="hover:bg-gray-800 py-3 px-2 w-full cursor-pointer ">
+                    Account
+                  </div>
+                </Link>
+
+                <div>
                   <hr className="border-slate-700 p-2" />
-                </li>
-                <li
+                </div>
+                <div
                   className="hover:bg-gray-800 py-2 w-full cursor-pointer"
                   onClick={() => {
                     signout();
                   }}
                 >
                   <FontAwesomeIcon icon={faRightFromBracket} /> Sign Out
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
         )}
