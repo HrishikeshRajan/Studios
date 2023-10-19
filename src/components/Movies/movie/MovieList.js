@@ -7,7 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import useEmblaCarousel from 'embla-carousel-react';
-import MovieCard from '../../MovieCard';
+import MovieCard from './MovieCard';
 
 const MovieList = ({ title, movies }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
