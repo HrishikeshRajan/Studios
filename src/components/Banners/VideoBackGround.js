@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import useMovieTrailer from '../hooks/useMovieTrailer';
+import useMovieTrailer from '../../hooks/useMovieTrailer';
 
 const VideoBackGround = (props) => {
   const trailer = useSelector((store) => store.movies.trailers);
