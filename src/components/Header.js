@@ -46,29 +46,26 @@ export const Header = () => {
   useEffect(() => {}, [gpt]);
 
   return (
-    <nav className="bg-black absolute top-0 left-0 right-0 z-50">
-      <div className="container mx-auto 100 px-5 py-2 lg:flex items-center z-10">
+    <nav className="bg-black absolute  top-0 left-0 right-0 z-50">
+      <div className="container mx-auto h-20 bg-black  100 px-5 py-2 lg:flex items-center z-10">
         <div className="flex justify-center lg:justify-start">
           <Link to={'/browse'}>
             <img className="w-14  md:w-20 rounded-xl" src={logo} alt="logo" />
           </Link>
-          {/* <button className="w-14  md:w-20 lg:hidden text-white">
-            <FontAwesomeIcon icon={faEllipsisVertical} />
-          </button> */}
         </div>
 
         {user.user && (
-          <div id="menu" className=" mx-auto md:mt-0 hidden lg:flex ">
-            <ul className="ml-auto md:flex ">
+          <div id="menu" className=" mx-auto  md:mt-0 hidden lg:flex ">
+            <ul className="ml-auto md:flex h-20">
               <li
                 className={`${
                   user.activeTab === NAVBAR_OPTIONS.Home
-                    ? 'bg-white bg-opacity-40 text-white '
+                    ? 'border-b-2 bg-opacity-40 text-white  '
                     : ''
                 } ${
                   user.activeTab !== NAVBAR_OPTIONS.Home &&
                   'hover:bg-white hover:bg-opacity-10 hover:text-white text-slate-300'
-                } font-medium  mx-1 px-5 py-3 rounded`}
+                } font-medium   mx-1 px-5 py-3 flex justify-center items-center `}
                 onClick={() => handleHomePageTab(NAVBAR_OPTIONS.Home)}
               >
                 <Link to={'/browse'}> Home </Link>
@@ -76,12 +73,12 @@ export const Header = () => {
               <li
                 className={`${
                   user.activeTab === NAVBAR_OPTIONS.Search
-                    ? 'bg-white bg-opacity-80 text-white '
+                    ? 'border-b-2 bg-opacity-80 text-white '
                     : ''
                 }  ${
                   user.activeTab !== NAVBAR_OPTIONS.Search &&
                   'hover:bg-white hover:bg-opacity-10 hover:text-white text-slate-300'
-                } font-medium  mx-1 px-5 py-3 rounded`}
+                } font-medium  mx-1 px-5 py-3  flex justify-center items-center `}
                 onClick={() => handleMovieClick(NAVBAR_OPTIONS.Search)}
               >
                 <Link to={'/browse'}> Search</Link>
@@ -92,12 +89,6 @@ export const Header = () => {
 
         {user.user && (
           <div className="lg:justify-between hidden lg:flex">
-            {/* <button
-              className="px-3 py-1 my-4 rounded bg-purple-900 mr-6 text-white"
-              onClick={handleGptSearchClick}
-            >
-              {gpt ? 'Home' : 'Ask to GPT'}
-            </button> */}
 
             {
               <div className="flex px-3 my-4 justify-end">
