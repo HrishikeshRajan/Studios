@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Header } from './Header/Header';
-import BottomBar from './BottomBar';
+import BottomBar from './Footer/BottomBar';
 import defaultUser from '../images/5856.jpg';
 import { updateProfile } from 'firebase/auth';
 import { validate } from '../utils/validateInput';

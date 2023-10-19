@@ -7,7 +7,7 @@ import useTopRatedMovies from '../hooks/useTopRated';
 import useUpCommingMovies from '../hooks/useUpComming';
 import GptSearch from './GptSearch';
 import { useSelector } from 'react-redux';
-import BottomBar from './BottomBar';
+import BottomBar from './Footer/BottomBar';
 
 export const Browse = () => {
 

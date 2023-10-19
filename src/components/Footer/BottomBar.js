@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch, faHouse } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { toggleGptSearchView } from '../utils/gptSlice';
+import { toggleGptSearchView } from '../../utils/gptSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 
