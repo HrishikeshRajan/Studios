@@ -117,7 +117,7 @@ export const Header = () => {
                 onClick={() => setToggle(!toggle)}
               />
 
-              <ul className="text-white text-xs p-3 bg-gray-900 absolute hidden group-hover:block  lg:right-0 top-14 rounded z-50">
+              <ul className="text-white text-xs p-3 bg-gray-900 absolute hidden group-hover:block  lg:right-0 top-11 rounded z-50">
                 <li className="hover:bg-gray-800 py-3 px-2 w-full ">
                   {user.user.email}
                 </li>
