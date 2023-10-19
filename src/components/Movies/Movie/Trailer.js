@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { decodeURI } from '../utils/uriEncoding';
+import { decodeURI } from '../../../utils/uriEncoding';
 import { useSelector } from 'react-redux';
-import useMovieTrailer from '../hooks/useMovieTrailer';
+import useMovieTrailer from '../../../hooks/useMovieTrailer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 const Trailer = () => {
