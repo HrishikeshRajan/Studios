@@ -5,10 +5,10 @@ import Profile from './Profile';
 
 const UserProfile = () => {
   return (
-    <div className="relative bg-slate-950">
+    <div className="relative  bg-slate-950">
       <Header />
 
-      <div className="w-screen md:pt-40 flex justify-center ">
+      <div className="w-full md:pt-40 flex justify-center ">
         <Profile />
       </div>
 
