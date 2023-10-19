@@ -16,10 +16,11 @@ const userSlice = createSlice({
 
     addActiveTab: (state, action) => {
       state.activeTab = action.payload;
-    },
+    }
+ 
   },
 });
 
-export const { addUser, removeUser,   addActiveTab } = userSlice.actions;
+export const { addUser, removeUser, addActiveTab } = userSlice.actions;
 
 export default userSlice.reducer;
