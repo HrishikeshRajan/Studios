@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import UserProfile from './Users/UserProfile';
 import EditProfile from './Users/EditProfile';
 import DeleteUser from './Users/DeleteUser';
-import MovieView from './MovieView';
+import MovieView from './Movies/Movie/MovieView';
 import Trailer from './Trailer';
 
 
