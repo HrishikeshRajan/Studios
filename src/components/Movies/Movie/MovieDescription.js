@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
-import { getRunTimeInHours, extractYear } from '../utils/movieDetails';
+import { getRunTimeInHours, extractYear } from '../../../utils/movieDetails';
 import { Link } from 'react-router-dom';
-import { encodeURI } from '../utils/uriEncoding';
+import { encodeURI } from '../../../utils/uriEncoding';
 
 const MovieDescription = () => {
   const movie = useSelector((store) => store.movies.selectedMovie);
