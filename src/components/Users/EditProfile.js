@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { Header } from './Header/Header';
-import BottomBar from './Footer/BottomBar';
-import defaultUser from '../images/5856.jpg';
+import { Header } from '../Header/Header';
+import BottomBar from '../Footer/BottomBar';
+import defaultUser from '../../images/5856.jpg';
 import { updateProfile } from 'firebase/auth';
-import { validate } from '../utils/validateInput';
-import { auth } from '../utils/firbase';
+import { validate } from '../../utils/validateInput';
+import { auth } from '../../utils/firbase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 

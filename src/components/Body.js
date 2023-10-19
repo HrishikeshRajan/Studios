@@ -2,9 +2,9 @@ import React from 'react';
 import { Login } from './Auth/Login';
 import { Browse } from './Browse';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import UserProfile from './UserProfile';
-import EditProfile from './EditProfile';
-import DeleteUser from './DeleteUser';
+import UserProfile from './Users/UserProfile';
+import EditProfile from './Users/EditProfile';
+import DeleteUser from './Users/DeleteUser';
 import MovieView from './MovieView';
 import Trailer from './Trailer';
 

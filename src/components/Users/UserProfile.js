@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header } from './Header/Header';
-import BottomBar from './Footer/BottomBar';
+import { Header } from '../Header/Header';
+import BottomBar from '../Footer/BottomBar';
 import Profile from './Profile';
 
 const UserProfile = () => {
