@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Header } from '../../Header/Header';
 
-import MoviePoster from '../../MoviePoster';
+import MoviePoster from './MoviePoster';
 import MovieDescription from './MovieDescription';
 
 import MoreInfo from './MoreInfo';
