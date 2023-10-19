@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieCard from './Movies/MovieCollection/MovieCard';
+import MovieCard from '../MovieCollection/MovieCard';
 import { Link } from 'react-router-dom';
 
 const SearchMoviesResults = ({ title, movies }) => {

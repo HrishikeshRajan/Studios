@@ -1,7 +1,7 @@
 import React from 'react';
 import GptSearchBar from './GptSearchBar';
 import GptMovieSuggestion from './GptMovieSuggestion';
-import { Background } from '../utils/constants';
+import { Background } from '../../../utils/constants';
 import { useSelector } from 'react-redux';
 
 const GptSearch = () => {

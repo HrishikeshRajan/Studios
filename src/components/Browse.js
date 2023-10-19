@@ -5,7 +5,7 @@ import SecondaryContainer from './Movies/SecondaryContainer';
 import usePopularMovies from '../hooks/usePopularMovies';
 import useTopRatedMovies from '../hooks/useTopRated';
 import useUpCommingMovies from '../hooks/useUpComming';
-import GptSearch from './GptSearch';
+import GptSearch from './Movies/Search/GptSearch';
 import { useSelector } from 'react-redux';
 import BottomBar from './Footer/BottomBar';
 

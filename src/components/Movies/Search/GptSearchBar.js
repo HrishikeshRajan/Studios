@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { LANG } from '../utils/languageConstant';
+import { LANG } from '../../../utils/languageConstant';
 import { useDispatch, useSelector } from 'react-redux';
 // import { openai } from '../utils/openai';
-import { generateQuery } from '../utils/generateQuery';
-import { OPTIONS, searchMovieByNameURI } from '../utils/constants';
-import { addMovieSuggestions } from '../utils/movieSlice';
+import { generateQuery } from '../../../utils/generateQuery';
+import { OPTIONS, searchMovieByNameURI } from '../../../utils/constants';
+import { addMovieSuggestions } from '../../../utils/movieSlice';
 import GptMovieSuggestion from './GptMovieSuggestion';
 
 const GptSearchBar = () => {
