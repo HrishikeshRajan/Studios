@@ -1,16 +1,16 @@
 import React, { useRef, useState } from 'react';
-import { Header } from './Header/Header';
-import { validate } from '../utils/validateInput';
+import { Header } from '../Header/Header';
+import { validate } from '../../utils/validateInput';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import { auth } from '../utils/firbase';
+import { auth } from '../../utils/firbase';
 
 import { updateProfile } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
-import { addUser } from '../utils/userSlice';
-import { Background } from '../utils/constants';
+import { addUser } from '../../utils/userSlice';
+import { Background } from '../../utils/constants';
 
 export const Login = () => {
   const [msgError, setMsgError] = useState(null);
