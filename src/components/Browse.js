@@ -1,7 +1,7 @@
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
 import { Header } from './Header/Header';
 import MainContainer from './Banners/MainContainer';
-import SecondaryContainer from './SecondaryContainer';
+import SecondaryContainer from './Movies/SecondaryContainer';
 import usePopularMovies from '../hooks/usePopularMovies';
 import useTopRatedMovies from '../hooks/useTopRated';
 import useUpCommingMovies from '../hooks/useUpComming';
