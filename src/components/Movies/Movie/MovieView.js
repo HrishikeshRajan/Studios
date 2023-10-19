@@ -5,7 +5,7 @@ import { Header } from '../../Header/Header';
 import MoviePoster from '../../MoviePoster';
 import MovieDescription from '../../MovieDescription';
 
-import MoreInfo from '../../MoreInfo';
+import MoreInfo from './MoreInfo';
 import useMovie from '../../../hooks/useMovie';
 
 const MovieView = () => {
