@@ -14,7 +14,6 @@ const useAuthenticate = () => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = auth.currentUser;
-
         dispatch(addUser({ uid, email, displayName }));
 
         if(location.pathname === '/'){
@@ -31,7 +30,7 @@ const useAuthenticate = () => {
     });
 
     return () => unSubscribe();
-  }, []);
+  }, [dispatch, location.pathname, navigate]);
 };
 
 export default useAuthenticate;

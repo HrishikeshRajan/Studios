@@ -1,68 +1,38 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useState } from 'react';
 import { Header } from '../Header/Header';
-import { validate } from '../../utils/validateInput';
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from 'firebase/auth';
-import { auth } from '../../utils/firbase';
-
-import { updateProfile } from 'firebase/auth';
+import { Background } from '../../utils/constants';
+import { loginToAccount, registerAccount } from '../../utils/firebaseHelper';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../../utils/userSlice';
-import { Background } from '../../utils/constants';
+import { auth } from '../../utils/firbase';
 
 export const Login = () => {
-  const [msgError, setMsgError] = useState(null);
   const [LogginForm, setLoginForm] = useState(true);
   const email = useRef(null);
   const password = useRef(null);
   const fullname = useRef(null);
   const dispatch = useDispatch();
 
-  const handleFormAction = () => {
-    const name = fullname.current ? fullname.current.value : null;
-    const errors = validate(email.current.value, password.current.value, name);
-
-    setMsgError(errors);
-
-    if (errors) return;
-
-    if (!LogginForm) {
-      createUserWithEmailAndPassword(
-        auth,
-        email.current.value,
-        password.current.value,
-      )
-        .then((result) => {
-          updateProfile(auth.currentUser, {
-            displayName: name,
-          })
-            .then(() => {
-              const { uid, email, displayName } = auth.currentUser;
-              dispatch(addUser({ uid, email, displayName }));
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          setMsgError(errorCode + ' - ' + errorMessage);
-        });
-    } else {
-      signInWithEmailAndPassword(
-        auth,
-        email.current.value,
-        password.current.value,
-      )
-        .then((userCredential) => {})
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          setMsgError(errorCode + ' - ' + errorMessage);
-        });
+  const handleFormAction = async () => {
+    try {
+      if (!LogginForm) {
+        await registerAccount(
+          fullname.current.value,
+          email.current.value,
+          password.current.value,
+        );
+        const user = {
+          id:auth.currentUser.uid,
+          email:auth.currentUser.email,
+          displayName: auth.currentUser.displayName
+      }
+        dispatch(addUser(user));
+      } else {
+        await loginToAccount(email.current.value, password.current.value);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -89,7 +59,6 @@ export const Login = () => {
         <h1 className="text-3xl font-bold p-2">
           {LogginForm ? 'Sign In' : 'Sign Up'}
         </h1>
-        {msgError && <p>{msgError}</p>}
 
         {!LogginForm && (
           <input
