@@ -44,68 +44,69 @@ export const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
+      <div className="">
         <img
           src={Background}
           alt="logo"
-          className="w-screen h-screen object-cover"
+          className="w-screen h-screen md:h-full object-cover absolute -z-0 inset-0 "
         />
       </div>
-      <form
-        action=""
-        method="post"
-        onSubmit={(e) => e.preventDefault()}
-        className=" flex flex-col text-white absolute p-7 mx-2 rounded md:p-12 md:w-3/12 bg-opacity-80 bg-black my-36 md:mx-auto right-0 left-0 "
-      >
-        <h1 className="text-3xl font-bold p-2">
-          {LogginForm ? 'Sign In' : 'Sign Up'}
-        </h1>
-
-        {LogginForm && error && (
-          <h1 className="text-sm bg-red-500 bg-opacity-90 font-bold p-2">
-            {error}
+      <div className="w-full h-screen px-20 flex justify-center items-center">
+        <form
+          method="post"
+          onSubmit={(e) => e.preventDefault()}
+          className=" flex flex-col items-center z-10 absolute w-full h-auto md:h-autotext-white p-7 rounded md:w-6/12 bg-opacity-80 bg-black md:mx-auto "
+        >
+          <h1 className="text-3xl font-bold p-2">
+            {LogginForm ? 'Sign In' : 'Sign Up'}
           </h1>
-        )}
 
-        {!LogginForm && (
+          {LogginForm && error && (
+            <h1 className="text-sm bg-red-500 bg-opacity-90 font-bold p-2">
+              {error}
+            </h1>
+          )}
+
+          {!LogginForm && (
+            <input
+              type="text"
+              name="fullname"
+              ref={fullname}
+              placeholder="Enter fullname"
+              className="p-2 my-2 w-full bg-slate-700"
+            />
+          )}
+
+          <input
+            type="email"
+            name="email"
+            ref={email}
+            placeholder="Email Address"
+            className="p-2 my-4 w-fulbg-slate-700"
+          />
           <input
             type="text"
-            name="fullname"
-            ref={fullname}
-            placeholder="Enter fullname"
-            className="p-2 my-2 w-full bg-slate-700"
+            ref={password}
+            name="password"
+            placeholder="Password"
+            className="p-2 my-4 w-fullbg-slate-700"
           />
-        )}
+          <button
+            type="submit"
+            className="p-2 my-2 w-ful bg-red-600 font-medium rounded-sm text-white"
+            onClick={() => handleFormAction()}
+          >
+            {LogginForm ? 'Sign In' : 'Sign Up'}
+          </button>
 
-        <input
-          type="email"
-          name="email"
-          ref={email}
-          placeholder="Email Address"
-          className="p-2 my-2 w-full bg-slate-700"
-        />
-        <input
-          type="text"
-          ref={password}
-          name="password"
-          placeholder="Password"
-          className="p-2 my-2 w-full bg-slate-700"
-        />
-        <button
-          type="submit"
-          className="p-2 my-2 bg-red-600 font-medium rounded-sm text-white"
-          onClick={() => handleFormAction()}
-        >
-          {LogginForm ? 'Sign In' : 'Sign Up'}
-        </button>
-
-        <p className="font-normal py-4">
-          {LogginForm ? 'New to Frames?' : 'Already have an account?'}{' '}
-          <span onClick={() => handleForm()} className="cursor-pointer">
-            {LogginForm ? 'Signup' : 'Sign In'}
-          </span>
-        </p>
-      </form>
+          <p className="font-normal mt-5 py-4">
+            {LogginForm ? 'New to Frames?' : 'Already have an account?'}{' '}
+            <span onClick={() => handleForm()} className="cursor-pointer">
+              {LogginForm ? 'Signup' : 'Sign In'}
+            </span>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };
