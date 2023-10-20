@@ -55,7 +55,7 @@ export const Login = () => {
         <form
           method="post"
           onSubmit={(e) => e.preventDefault()}
-          className=" flex flex-col  items-center z-10   absolute w-full  h-auto md:h-auto   text-white  p-7  rounded  md:w-6/12 bg-opacity-80 bg-black  md:mx-auto "
+          className=" flex flex-col  items-center z-10   absolute w-full  h-auto md:h-auto   text-white  p-7  rounded  md:w-6/12 lg:w-4/12 bg-opacity-80 bg-black  md:mx-auto "
         >
           <h1 className="text-3xl font-bold p-2">
             {LogginForm ? 'Sign In' : 'Sign Up'}
