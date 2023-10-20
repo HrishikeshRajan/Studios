@@ -55,7 +55,7 @@ export const Login = () => {
         <form
           method="post"
           onSubmit={(e) => e.preventDefault()}
-          className=" flex flex-col items-center z-10 absolute w-full h-auto md:h-autotext-white p-7 rounded md:w-6/12 bg-opacity-80 bg-black md:mx-auto "
+          className=" flex flex-col  items-center z-10   absolute w-full  h-auto md:h-auto   text-white  p-7  rounded  md:w-6/12 bg-opacity-80 bg-black  md:mx-auto "
         >
           <h1 className="text-3xl font-bold p-2">
             {LogginForm ? 'Sign In' : 'Sign Up'}
@@ -82,18 +82,18 @@ export const Login = () => {
             name="email"
             ref={email}
             placeholder="Email Address"
-            className="p-2 my-4 w-fulbg-slate-700"
+            className="p-2 my-4 w-full bg-slate-700"
           />
           <input
             type="text"
             ref={password}
             name="password"
             placeholder="Password"
-            className="p-2 my-4 w-fullbg-slate-700"
+            className="p-2 my-4 w-full bg-slate-700"
           />
           <button
             type="submit"
-            className="p-2 my-2 w-ful bg-red-600 font-medium rounded-sm text-white"
+            className="p-2 my-2 w-full bg-red-600 font-medium rounded-sm text-white"
             onClick={() => handleFormAction()}
           >
             {LogginForm ? 'Sign In' : 'Sign Up'}
