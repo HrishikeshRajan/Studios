@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 const MoreInfo = () => {
   const movie = useSelector((store) => store.movies);
   if (movie === null || movie.selectedMovie === null ||  movie.selectedMovieCast === null) return;
- 
-
 
   return (
     <div className="text-white p-10">

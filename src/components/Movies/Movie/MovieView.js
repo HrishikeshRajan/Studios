@@ -7,6 +7,7 @@ import MovieDescription from './MovieDescription';
 
 import MoreInfo from './MoreInfo';
 import useMovie from '../../../hooks/useMovie';
+import BottomBar from '../../Footer/BottomBar';
 
 const MovieView = () => {
   useMovie();
@@ -19,6 +20,7 @@ const MovieView = () => {
         <MovieDescription />
         <MoreInfo />
       </div>
+      <BottomBar />
     </div>
   );
 };
