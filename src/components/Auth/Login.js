@@ -9,6 +9,7 @@ import { auth } from '../../utils/firbase';
 
 export const Login = () => {
   const [LogginForm, setLoginForm] = useState(true);
+  const [error, setError] = useState('');
   const email = useRef(null);
   const password = useRef(null);
   const fullname = useRef(null);
@@ -23,16 +24,16 @@ export const Login = () => {
           password.current.value,
         );
         const user = {
-          id:auth.currentUser.uid,
-          email:auth.currentUser.email,
-          displayName: auth.currentUser.displayName
-      }
+          id: auth.currentUser.uid,
+          email: auth.currentUser.email,
+          displayName: auth.currentUser.displayName,
+        };
         dispatch(addUser(user));
       } else {
         await loginToAccount(email.current.value, password.current.value);
       }
     } catch (error) {
-      console.log(error);
+      setError('Invalid Email or Password');
     }
   };
 
@@ -59,6 +60,12 @@ export const Login = () => {
         <h1 className="text-3xl font-bold p-2">
           {LogginForm ? 'Sign In' : 'Sign Up'}
         </h1>
+
+        {LogginForm && error && (
+          <h1 className="text-sm bg-red-500 bg-opacity-90 font-bold p-2">
+            {error}
+          </h1>
+        )}
 
         {!LogginForm && (
           <input
