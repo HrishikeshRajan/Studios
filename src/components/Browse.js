@@ -19,15 +19,15 @@ export const Browse = () => {
   const gptSearch = useSelector((store) => store.gpt.showGptSearch);
 
   return (
-    <div className='relative '>
+    <div >
       <Header />
       {gptSearch ? (
         <GptSearch />
       ) : (
-        <>
+        <div className='relative'>
           <MainContainer />
           <SecondaryContainer />
-        </>
+        </div>
       )}
       <BottomBar />
     </div>

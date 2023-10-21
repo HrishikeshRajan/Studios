@@ -10,9 +10,9 @@ const MainContainer = () => {
   const mainMovie = movies[0];
 
   return (
-    <div  >
+    <div className='relative' >
       <VideoTitle  title={mainMovie.original_title}  overview = { mainMovie.overview}  id ={mainMovie.id}/>
-      <VideoBackGround  movieId ={mainMovie.id}/>
+      <VideoBackGround  movieId ={mainMovie.id} poster={mainMovie.backdrop_path}/>
     </div>
   );
 };

@@ -42,8 +42,8 @@ const MovieList = ({ title, movies }) => {
   if (movies === null) return;
 
   return (
-    <section id="test" className="">
-      <div className='mb-24'>
+    <section >
+      <div className='mb-20'>
       <h3 className='text-xl font-bold text-white ml-10 p-4 '>{title}</h3>
       <div className="flex justify-between relative   ">
       

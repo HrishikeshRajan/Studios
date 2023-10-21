@@ -30,6 +30,10 @@ const options = {
 export const OPTIONS = options;
 export const URL = url;
 export const IMG_CDN = 'https://image.tmdb.org/t/p/w780/';
+export const YOUTUBE_URL = (key) =>
+  'https://www.youtube.com/embed/' +
+  key +
+  '?rel=0?version=3&autoplay=1&controls=0&showinfo=0&loop=1​&mute=1&fullscreen=1';
 
 export const Background =
   'https://assets.nflxext.com/ffe/siteui/vlv3/42df4e1f-bef6-499e-87ff-c990584de314/5e7c383c-1f88-4983-b4da-06e14c0984ba/IN-en-20230904-popsignuptwoweeks-perspective_alpha_website_medium.jpg';

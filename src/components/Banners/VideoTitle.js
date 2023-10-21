@@ -10,7 +10,7 @@ const VideoTitle = (props) => {
     navigate('/trailer/' + props.id + '/' + props.title);
   };
   return (
-    <div className="pt-28 md:pt-10 bg-gradient-to-r from-black h-screen w-full  top-0 left-0 right-0 bottom-0 flex flex-col items-center md:items-start md:p-10 relative z-30">
+    <div className="pt-28 md:pt-10 bg-gradient-to-r from-black h-[700px] w-full  top-0 left-0 right-0 bottom-0 flex pl-4 flex-col items-center lg:items-start md:p-10 relative z-30">
       <h1 className=" text-lg  my-2 md:mt-32 md:text-6xl font-bold text-white">
         {props.title}
       </h1>
@@ -18,16 +18,16 @@ const VideoTitle = (props) => {
         {props.overview}
       </p>
 
-      <div className="my-2">
+      <div className="my-2 flex justify-start">
         <button
-          className="bg-white text-black px-4 py-1 md:py-2 mx-1  rounded  hover:bg-slate-500"
+          className="bg-white text-black  mr-1 py-1 px-2 md:px-4 md:py-2  rounded  hover:bg-slate-500 text-xs"
           onClick={playTrailer}
         >
           Play <FontAwesomeIcon icon={faPlay} beat />
         </button>
         <Link to={'/movie/' + props.id}>
-          <button className="bg-gray-500 text-black px-4  py-1 md:py-2 mx-1 rounded bg-opacity-95 hover:bg-slate-50">
-            <FontAwesomeIcon icon={faCircleInfo} className="text-slate-400" />
+          <button className="bg-white bg-opacity-60 text-black mr-1 px-2 py-1  text-xs md:px-4  md:py-2 rounded  hover:bg-opacity-100">
+          <FontAwesomeIcon icon={faCircleInfo} className="text-black hover:text-white" />
           </button>
         </Link>
       </div>

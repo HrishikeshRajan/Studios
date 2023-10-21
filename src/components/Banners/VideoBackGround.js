@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 import useMovieTrailer from '../../hooks/useMovieTrailer';
+import { IMG_CDN, YOUTUBE_URL } from '../../utils/constants';
 
 const VideoBackGround = (props) => {
   const trailer = useSelector((store) => store.movies.trailers);
@@ -9,18 +10,19 @@ const VideoBackGround = (props) => {
 
   if (trailer === null) return;
   return (
-    <div className="w-full h-screen top-0 left-0 right-0 absolute ">
+    <div className="w-full  h-screen top-20 lg:-top-96 xl:top-0 left-0 right-0 absolute ">
       <iframe
-        className="w-full aspect-video"
-        src={
-          'https://www.youtube.com/embed/' +
-          trailer?.key +
-          '?rel=0?version=3&autoplay=1&controls=0&showinfo=0&loop=1​&mute=1&fullscreen=1'
-        }
+        className="w-full aspect-video hidden lg:flex"
+        src={YOUTUBE_URL(trailer.key)}
         title={trailer.name}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
         allowFullScreen
       ></iframe>
+
+      <div>
+        <img className='w-full h-auto object-cover lg:hidden' src={IMG_CDN + props.poster} alt="Movie Poster" />
+      </div>
+
     </div>
   );
 };
