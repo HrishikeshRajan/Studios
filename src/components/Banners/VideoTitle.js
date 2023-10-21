@@ -11,7 +11,7 @@ const VideoTitle = (props) => {
   };
   return (
     <div className="pt-28 md:pt-10 bg-gradient-to-r from-black h-[700px] w-full  top-0 left-0 right-0 bottom-0 flex pl-4 flex-col items-center lg:items-start md:p-10 relative z-30">
-      <h1 className=" text-lg  my-2 md:mt-32 md:text-6xl font-bold text-white">
+      <h1 className=" text-lg  my-2 mt-0 ms:mt-10 md:mt-36 md:text-6xl font-bold text-white">
         {props.title}
       </h1>
       <p className="py-6 text-xs w-screen md:text-lg md:w-2/4 text-white hidden xl:block ">
