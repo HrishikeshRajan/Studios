@@ -10,9 +10,9 @@ const MainContainer = () => {
   const mainMovie = movies[0];
 
   return (
-    <div className='relative' >
+    <div className='flex flex-col justify-center items-center h-[600px] relative' >
       <VideoTitle  title={mainMovie.original_title}  overview = { mainMovie.overview}  id ={mainMovie.id}/>
-      <VideoBackGround  movieId ={mainMovie.id} poster={mainMovie.backdrop_path}/>
+      <VideoBackGround  movieId ={mainMovie.id} poster={mainMovie.backdrop_path}  />
     </div>
   );
 };

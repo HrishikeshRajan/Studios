@@ -3,33 +3,35 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
-
 const VideoTitle = (props) => {
   const navigate = useNavigate();
   const playTrailer = () => {
     navigate('/trailer/' + props.id + '/' + props.title);
   };
   return (
-    <div className="pt-28 md:pt-10 bg-gradient-to-r from-black h-[700px] w-full  top-0 left-0 right-0 bottom-0 flex pl-4 flex-col items-center lg:items-start md:p-10 relative z-30">
-      <h1 className=" text-lg  my-2 mt-0 ms:mt-10 md:mt-36 md:text-6xl font-bold text-white">
-        {props.title}
-      </h1>
-      <p className="py-6 text-xs w-screen md:text-lg md:w-2/4 text-white hidden xl:block ">
-        {props.overview}
-      </p>
-
-      <div className="my-2 flex justify-start">
-        <button
-          className="bg-white text-black  mr-1 py-1 px-2 md:px-4 md:py-2  rounded  hover:bg-slate-500 text-xs"
-          onClick={playTrailer}
-        >
-          Play <FontAwesomeIcon icon={faPlay} beat />
-        </button>
-        <Link to={'/movie/' + props.id}>
-          <button className="bg-white bg-opacity-60 text-black mr-1 px-2 py-1  text-xs md:px-4  md:py-2 rounded  hover:bg-opacity-100">
-          <FontAwesomeIcon icon={faCircleInfo} className="text-black hover:text-white" />
+    <div className=" bg-gradient-to-r from-black  w-full    h-full absolute  z-10 flex flex-col justify-center  item-end md:flex-row md:items-center">
+      <div className="flex flex-col  justify-center items-center md:items-start w-full">
+        <h1 className="text-white text-3xl px-10 pb-1 md:text-5xl">
+          {props.title}
+        </h1>
+        <p className=" text-white p-10 md:w-3/4 text-xs text-justify md:text-lg md:text-left">{props.overview}</p>
+        <div className="my-2 flex justify-around md:justify-start md:px-10 bottom-0 absolute md:static  w-full">
+          <button
+            className="bg-white px-4 h-10 text-black rounded text-xs md:mr-5"
+            onClick={playTrailer}
+          >
+            Play <FontAwesomeIcon icon={faPlay} beat />
           </button>
-        </Link>
+          <Link to={'/movie/' + props.id} className="flex flex-col h-10 ">
+            <button className=" text-slate-50 mr-1  text-xs md:font-bold h-10  hover:bg-opacity-100">
+              <FontAwesomeIcon
+                icon={faCircleInfo}
+                className="text-white hover:text-white"
+              />
+            </button>
+            <small className="text-white text-xs font-light md:font-normal">info</small>
+          </Link>
+        </div>
       </div>
     </div>
   );

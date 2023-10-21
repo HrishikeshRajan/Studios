@@ -19,12 +19,12 @@ export const Browse = () => {
   const gptSearch = useSelector((store) => store.gpt.showGptSearch);
 
   return (
-    <div >
+    <div className='relative flex flex-col'>
       <Header />
       {gptSearch ? (
         <GptSearch />
       ) : (
-        <div className='relative'>
+        <div className='relative mt-20'>
           <MainContainer />
           <SecondaryContainer />
         </div>

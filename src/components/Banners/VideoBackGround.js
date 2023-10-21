@@ -10,17 +10,17 @@ const VideoBackGround = (props) => {
 
   if (trailer === null) return;
   return (
-    <div className="w-full  h-screen top-20 lg:-top-96 xl:top-0 left-0 right-0 absolute ">
-      <iframe
+    <div className="w-full  h-full absolute z-1 ">
+      {/* <iframe
         className="w-full aspect-video hidden lg:flex"
         src={YOUTUBE_URL(trailer.key)}
         title={trailer.name}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-        allowFullScreen
-      ></iframe>
+        allowFullScreen = {true}
+      ></iframe> */}
 
       <div>
-        <img className='w-full h-auto object-cover lg:hidden' src={IMG_CDN + props.poster} alt="Movie Poster" />
+        <img className='w-full h-full object-cover absolute' src={IMG_CDN + props.poster} alt="Movie Poster" />
       </div>
 
     </div>
