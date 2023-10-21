@@ -1,27 +1,27 @@
 import React from 'react';
-import GptSearchBar from './GptSearchBar';
-import GptMovieSuggestion from './GptMovieSuggestion';
+import SearchBar from './SearchBar';
+import MovieSuggestion from './MovieSuggestion';
 import { Background } from '../../../utils/constants';
 import { useSelector } from 'react-redux';
 
-const GptSearch = () => {
+const Search = () => {
   const movies = useSelector((store) => store.movies);
 
   return (
     <div>
-      <div className="absolute  -z-10">
+      {/* <div className="absolute  -z-10">
         <img
           src={Background}
           alt="logo"
           className="h-screen w-screen object-cover"
         />
-      </div>
-      <GptSearchBar />
+      </div> */}
+      <SearchBar />
       {movies.movieSuggestions && (
-        <GptMovieSuggestion movies={movies.movieSuggestions?.results} />
+        <MovieSuggestion movies={movies.movieSuggestions?.results} />
       )}
     </div>
   );
 };
 
-export default GptSearch;
+export default Search;

@@ -2,12 +2,12 @@ import React, { useRef, useState } from 'react';
 import { LANG } from '../../../utils/languageConstant';
 import { useDispatch, useSelector } from 'react-redux';
 // import { openai } from '../utils/openai';
-import { generateQuery } from '../../../utils/generateQuery';
+// import { generateQuery } from '../../../utils/generateQuery';
 import { OPTIONS, searchMovieByNameURI } from '../../../utils/constants';
 import { addMovieSuggestions } from '../../../utils/movieSlice';
-import GptMovieSuggestion from './GptMovieSuggestion';
+// import GptMovieSuggestion from './GptMovieSuggestion';
 
-const GptSearchBar = () => {
+const SearchBar = () => {
   const appConfig = useSelector((store) => store.appConfig);
 
   const [suggestedMovies, setSuggestedMovies] = useState(null);
@@ -28,12 +28,9 @@ const GptSearchBar = () => {
   };
 
   const handleSearch = async () => {
-
-
     try {
 
       const result = await searchForMovies(search.current.value)
-      console.log(result)
       if (result === null ) return;
 
       setSuggestedMovies(result);
@@ -46,7 +43,6 @@ const GptSearchBar = () => {
   return (
     <div className=" text-center absolute top-32 z-50 w-full  flex justify-center ">
       <form
-        action=""
         className=" w-full mx-1 md:w-1/2  rounded grid grid-cols-12"
         method="post"
         onSubmit={(e) => e.preventDefault()}
@@ -55,7 +51,6 @@ const GptSearchBar = () => {
           type="text"
           className="p-3  m-2 col-span-9"
           placeholder={LANG[appConfig.language].gptSearchPlaceholder}
-          id=""
           ref={search}
         />
 
@@ -70,4 +65,4 @@ const GptSearchBar = () => {
   );
 };
 
-export default GptSearchBar;
+export default SearchBar;

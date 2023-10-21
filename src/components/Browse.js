@@ -5,7 +5,7 @@ import SecondaryContainer from './Movies/SecondaryContainer';
 import usePopularMovies from '../hooks/usePopularMovies';
 import useTopRatedMovies from '../hooks/useTopRated';
 import useUpCommingMovies from '../hooks/useUpComming';
-import GptSearch from './Movies/Search/GptSearch';
+import Search from './Movies/Search/Search';
 import { useSelector } from 'react-redux';
 import BottomBar from './Footer/BottomBar';
 
@@ -22,7 +22,7 @@ export const Browse = () => {
     <div className='relative flex flex-col'>
       <Header />
       {gptSearch ? (
-        <GptSearch />
+        <Search />
       ) : (
         <div className='relative mt-20'>
           <MainContainer />
