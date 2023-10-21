@@ -33,7 +33,7 @@ export const Login = () => {
         await loginToAccount(email.current.value, password.current.value);
       }
     } catch (error) {
-      setError('Invalid Email or Password');
+      setError('Please add required field for authentication');
     }
   };
 
@@ -44,7 +44,7 @@ export const Login = () => {
   return (
     <div>
       <Header />
-      <div className="">
+      <div>
         <img
           src={Background}
           alt="logo"
@@ -61,7 +61,7 @@ export const Login = () => {
             {LogginForm ? 'Sign In' : 'Sign Up'}
           </h1>
 
-          {LogginForm && error && (
+          {error && error && (
             <h1 className="text-sm bg-red-500 bg-opacity-90 w-full font-bold p-2">
               {error}
             </h1>
@@ -73,7 +73,7 @@ export const Login = () => {
               name="fullname"
               ref={fullname}
               placeholder="Enter fullname"
-              className="p-2 my-2 w-full bg-slate-700"
+              className={`p-2 my-2 w-full bg-slate-700 ${error && ' border-2 border-red-500' }`}
             />
           )}
 
@@ -82,14 +82,14 @@ export const Login = () => {
             name="email"
             ref={email}
             placeholder="Email Address"
-            className="p-2 my-4 w-full bg-slate-700"
+            className={`p-2 my-2 w-full bg-slate-700 ${error && ' border-2 border-red-500' }`}
           />
           <input
             type="text"
             ref={password}
             name="password"
             placeholder="Password"
-            className="p-2 my-4 w-full bg-slate-700"
+            className={`p-2 my-2 w-full bg-slate-700 ${error && ' border-2 border-red-500' }`}
           />
           <button
             type="submit"
