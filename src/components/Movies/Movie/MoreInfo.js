@@ -6,7 +6,7 @@ const MoreInfo = () => {
   if (movie === null || movie.selectedMovie === null ||  movie.selectedMovieCast === null) return;
 
   return (
-    <div className="text-white p-10">
+    <div className="text-white px-2">
       <h3 className="py-5 font-bold text-center">More Info</h3>
       <div>
         <ul>
