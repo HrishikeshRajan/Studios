@@ -62,7 +62,7 @@ export const Login = () => {
           </h1>
 
           {LogginForm && error && (
-            <h1 className="text-sm bg-red-500 bg-opacity-90 font-bold p-2">
+            <h1 className="text-sm bg-red-500 bg-opacity-90 w-full font-bold p-2">
               {error}
             </h1>
           )}
