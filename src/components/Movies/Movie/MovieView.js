@@ -17,8 +17,10 @@ const MovieView = () => {
       <Header />
       <div className="relative">
         <MoviePoster />
-        <MovieDescription />
-        <MoreInfo />
+        <div className='relative'>
+          <MovieDescription />
+          <MoreInfo />
+        </div>
       </div>
       <BottomBar />
     </div>

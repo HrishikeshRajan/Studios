@@ -14,17 +14,19 @@ const MovieDescription = () => {
   const modifiedTrailerUri = encodeURI(trailerUri);
 
   return (
-    <div className="text-white p-5 md:top-20 py-36 relative z-10 top-15 bg-gradient-to-r from-black    h-screen">
+    <div className="text-white px-1 top-2/3 md:top-20 py-36 relative z-10  bg-gradient-to-r from-black    h-screen">
       <ul>
-        <li className="mb-8 ">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold">{movie.title}</h1>
+        <li className="mb-8 flex justify-center lg:justify-start lg:px-10">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold">
+            {movie.title}
+          </h1>
         </li>
-        <li className=" flex justify-center lg:justify-start">
+        <li className=" flex justify-center lg:justify-start lg:px-10">
           <h3 className="font-bold text-sm md:text-lg text-justify  lg:text-lg w-3/4">
             {movie.overview}
           </h3>
         </li>
-        <li className="pb-5 flex justify-start pt-10">
+        <li className="pb-5 flex justify-center pt-10 lg:justify-start lg:px-10">
           <div className="flex justify-evenly">
             <span className="text-slate-200 text-xs md:text-lg font-bold mr-6">
               {'IMDB ' + parseFloat(movie.vote_average.toFixed(1))}
@@ -38,10 +40,13 @@ const MovieDescription = () => {
             </span>
           </div>
         </li>
-        <li className="flex justify-start">
+        <li className="flex justify-center lg:justify-start lg:px-10">
           <div className="flex justify-evenly">
             {movie.genres.map((item, index) => (
-              <span className="text-white text-xs font-bold md:text-lg mr-6" key={item.id}>
+              <span
+                className="text-white text-xs font-bold md:text-lg mr-6"
+                key={item.id}
+              >
                 {item.name}
               </span>
             ))}
@@ -49,11 +54,13 @@ const MovieDescription = () => {
         </li>
       </ul>
 
-      <Link to={modifiedTrailerUri}>
-        <button className="p-3 mt-10 text-xs md:text-lg font-bold border-2 rounded hover:bg-white hover:text-black">
-          <FontAwesomeIcon icon={faPlay} /> Trailer
-        </button>
-      </Link>
+      <div className='flex justify-center lg:justify-start lg:px-10'>
+        <Link to={modifiedTrailerUri}>
+          <button className="p-3 mt-10  text-xs md:text-lg font-bold border-2 rounded hover:bg-white hover:text-black">
+            <FontAwesomeIcon icon={faPlay} /> Trailer
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

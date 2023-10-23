@@ -3,15 +3,21 @@ import { useSelector } from 'react-redux';
 
 const MoreInfo = () => {
   const movie = useSelector((store) => store.movies);
-  if (movie === null || movie.selectedMovie === null ||  movie.selectedMovieCast === null) return;
+  if (
+    movie === null ||
+    movie.selectedMovie === null ||
+    movie.selectedMovieCast === null
+  )
+    return;
 
   return (
-    <div className="text-white px-2">
-      <h3 className="py-5 font-bold text-center">More Info</h3>
+    <div className="text-white px-10 absolute mt-20 w-full">
+      <h3 className="font-bold text-center">More Info</h3>
+
       <div>
         <ul>
           <li>
-            <h3 className='font-bold py-5'>Audio Languages</h3>
+            <h3 className="font-bold py-5">Audio Languages</h3>
             <ul className="text-white">
               {movie.selectedMovie.spoken_languages.map((lan, index) => (
                 <li className="text-white" key={index}>
@@ -20,9 +26,9 @@ const MoreInfo = () => {
               ))}
             </ul>
           </li>
-  
+
           <li>
-            <h3 className='font-bold py-5'>Producers</h3>
+            <h3 className="font-bold py-5">Producers</h3>
             <ul>
               {movie.selectedMovie.production_companies.map(
                 (company, index) => (
@@ -31,15 +37,15 @@ const MoreInfo = () => {
               )}
             </ul>
           </li>
-          
+
           <li>
-            <h3 className='font-bold py-5'>Cast</h3>
+            <h3 className="font-bold py-5">Cast</h3>
             <ul>
-              {movie.selectedMovieCast.cast.map(
-                (member, index) => (
-                  <li key={index}>{member.original_name + ' : ' + member.character}</li>
-                ),
-              )}
+              {movie.selectedMovieCast.cast.map((member, index) => (
+                <li key={index}>
+                  {member.original_name + ' : ' + member.character}
+                </li>
+              ))}
             </ul>
           </li>
         </ul>
