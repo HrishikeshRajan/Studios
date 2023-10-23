@@ -7,7 +7,6 @@ import {
   EmailAuthProvider,
   deleteUser,
 } from 'firebase/auth';
-import { validate } from '../../utils/validateInput';
 import { auth } from '../../utils/firbase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -20,7 +19,7 @@ const DeleteUser = () => {
   const password = useRef(null);
 
   const handleSaveForm = async () => {
-    const errors = validate(password.current.value);
+    const errors = true
     setMsgError(errors);
 
     if (errors) return;

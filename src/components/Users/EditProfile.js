@@ -3,7 +3,7 @@ import { Header } from '../Header/Header';
 import BottomBar from '../Footer/BottomBar';
 import defaultUser from '../../images/5856.jpg';
 import { updateProfile } from 'firebase/auth';
-import { isFullnameValid, validate } from '../../utils/validateInput';
+import { isFullnameValid} from '../../utils/validateInput';
 import { auth } from '../../utils/firbase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,6 @@ const EditProfile = () => {
 
   const handleSaveForm = async () => {
     const errors = isFullnameValid(fullname.current.value);
-console.log(errors)
     if (!errors) {
       setMsgError('Please fill an valid fullname');
     }
@@ -43,7 +42,7 @@ console.log(errors)
               Update Profile
             </h1>
           </div>
-          <div className="w-full h-full flex justify-center  ">
+          <div className="w-full h-full flex justify-center ">
             <img
               src={defaultUser}
               className="w-20 h-20 mx-2 rounded-full "
@@ -54,7 +53,7 @@ console.log(errors)
             <form
               method="post"
               onSubmit={(e) => e.preventDefault()}
-              className=" flex flex-col text-white w-full px-4 mt-5 "
+              className=" flex flex-col text-white w-full lg:w-4/12 px-4 mt-5 "
             >
               {msgError && (
                 <p className="text-red-700 border-1 p-2 border-red-600 bg-red-200">
