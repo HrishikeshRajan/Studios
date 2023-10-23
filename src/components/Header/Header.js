@@ -108,7 +108,7 @@ export const Header = () => {
               </div>
             }
 
-            <div className="flex flex-col items-center relative group">
+            <div className=" w-full flex flex-col items-center relative group ">
               <img
                 className="w-10 h-10 rounded-full"
                 src={defaultUser}
@@ -116,22 +116,22 @@ export const Header = () => {
                 onClick={() => setToggle(!toggle)}
               />
 
-              <div className="text-white text-xs p-3 bg-gray-900 absolute hidden group-hover:block   lg:right-0 top-11 rounded z-50">
-                <div className="hover:bg-gray-800 py-3 px-2 w-full ">
+              <div className="text-white pt-10 top-10 text-xs p-3 bg-black hidden absolute  group-hover:block   lg:right-0 z-50">
+                <div className="hover:bg-gray-800 py-4 px-2 w-full rounded ">
                   {user.user.email}
                 </div>
 
                 <Link to={'/account'}>
-                  <div className="hover:bg-gray-800 py-3 px-2 w-full cursor-pointer ">
+                  <div className="hover:bg-gray-800 py-4 px-2 w-full rounded cursor-pointer ">
                     Account
                   </div>
                 </Link>
 
                 <div>
-                  <hr className="border-slate-700 p-2" />
+                  {/* <hr className="border-slate-700 p-2" /> */}
                 </div>
                 <div
-                  className="hover:bg-gray-800 py-2 w-full cursor-pointer"
+                  className="hover:bg-gray-800 py-4 px-2 rounded w-full cursor-pointer"
                   onClick={() => {
                     signout();
                   }}
