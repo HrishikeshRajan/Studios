@@ -25,7 +25,7 @@ const Profile = () => {
   const [lanuageOpt, setLanguageOpt] = useState(false);
 
   return (
-    <div className="w-screen px-10 pt-20">
+    <div className="w-screen px-10 pt-20 lg:pt-0">
       <ul className="flex justify-start">
         <li
           className={`p-4 mx-2 ${
