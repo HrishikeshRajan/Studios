@@ -10,6 +10,9 @@ export const validate = (email = null, password = null, fullname = null) => {
   // if (!fullname || specialCharRegex.test(fullname)) {
   //   return 'Full name cannot contain special characters';
   // }
+};
 
-  
+export const isFullnameValid = (fullname) => {
+  if (fullname.length < 2) return false;
+  else return true;
 };

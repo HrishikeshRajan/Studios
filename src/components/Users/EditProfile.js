@@ -3,10 +3,10 @@ import { Header } from '../Header/Header';
 import BottomBar from '../Footer/BottomBar';
 import defaultUser from '../../images/5856.jpg';
 import { updateProfile } from 'firebase/auth';
-import { validate } from '../../utils/validateInput';
+import { isFullnameValid, validate } from '../../utils/validateInput';
 import { auth } from '../../utils/firbase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const EditProfile = () => {
   const [msgError, setMsgError] = useState(null);
@@ -14,15 +14,17 @@ const EditProfile = () => {
   const fullname = useRef(null);
 
   const handleSaveForm = async () => {
-    const errors = validate(fullname.current.value);
-    console.log(errors)
-    setMsgError(errors);
-
-    if (errors) return;
+    const errors = isFullnameValid(fullname.current.value);
+console.log(errors)
+    if (!errors) {
+      setMsgError('Please fill an valid fullname');
+    }
+    if (!errors) return;
     updateProfile(auth.currentUser, {
       displayName: fullname.current.value,
     })
       .then(() => {
+        setMsgError(false)
         setMsgSuccess('Successfully Updated');
       })
       .catch((error) => {
@@ -31,13 +33,15 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="bg-gray-950">
+    <div>
       <Header />
 
       <div className="w-screen  h-screen flex flex-col justify-center">
         <div className="flex w-full flex-col">
           <div className="w-full text-center">
-            <h1 className="text-white font-bold text-3xl my-5">Edit Profile</h1>
+            <h1 className="text-slate-200 font-bold text-2xl my-5 ">
+              Update Profile
+            </h1>
           </div>
           <div className="w-full h-full flex justify-center  ">
             <img
@@ -48,19 +52,26 @@ const EditProfile = () => {
           </div>
           <div className="w-full h-full flex justify-center   ">
             <form
-              action=""
               method="post"
               onSubmit={(e) => e.preventDefault()}
-              className=" flex flex-col text-white w-4/12 p-2 bg-black"
+              className=" flex flex-col text-white w-full px-4 mt-5 "
             >
-              {msgError && <p className="text-red-700 border-1 p-2 border-red-600 bg-red-200"><sup>*</sup>{msgError} <FontAwesomeIcon icon={faCircleExclamation} /></p>}
-              {msgSuccess && <p className="text-green-500 border-1 p-2 border-green-800 bg-green-100 ">{msgSuccess}          <FontAwesomeIcon icon={faCheck} /></p>}
-
+              {msgError && (
+                <p className="text-red-700 border-1 p-2 border-red-600 bg-red-200">
+                  <sup>*</sup>
+                  {msgError}{' '}
+                </p>
+              )}
+              {msgSuccess && (
+                <p className="text-green-500 border-1 p-2 border-green-800 bg-green-100 ">
+                  {msgSuccess} <FontAwesomeIcon icon={faCheck} />
+                </p>
+              )}
 
               <input
                 type="text"
                 name="fullname"
-                placeholder="Enter fulname"
+                placeholder="Enter your fullname"
                 ref={fullname}
                 className="p-2 my-2 w-full bg-slate-700"
               />
