@@ -20,14 +20,17 @@ export const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const gpt = useSelector((store) => store.gpt.showGptSearch);
+  const [lang, setLang] = useState({code:SUPPORTED_LANGUAGES[2].code,name:SUPPORTED_LANGUAGES[2].name});
+  // const [lang, setLang] = useState(SUPPORTED_LANGUAGES[2].name);
 
   useAuthenticate();
 
   const [toggle, setToggle] = useState(false);
   const signout = useSignOut();
 
-  const handleLanguage = (e) => {
-    dispatch(changeLanguage(e.target.value));
+  const handleLanguage = (code,name) => {
+    // dispatch(changeLanguage(e.target.value));
+    setLang({code,name});
   };
 
   const handleMovieClick = (OPTIONS) => {
@@ -89,7 +92,7 @@ export const Header = () => {
 
         {user.user && (
           <div className="lg:justify-between hidden lg:flex">
-            {
+            {/* {
               <div className="flex px-3 my-4 justify-end">
                 <select
                   className="rounded bg-black text-white border-0"
@@ -106,6 +109,27 @@ export const Header = () => {
                   ))}
                 </select>
               </div>
+            } */}
+            {
+              <div className="flex px-3 pr-10 mr-10  justify-center group items-center relative ">
+                <h4 className="text-slate-200 text-xs ">
+                  {
+                    lang.name
+                  }
+                </h4>
+                <ul className="w-48 right-0 p-2 bg-black hidden group-hover:block absolute top-10">
+                  {SUPPORTED_LANGUAGES.map((language, index) => (
+                    <li
+                      key={index}
+                      onClick={() => handleLanguage(language.code, language.name)}
+                  
+                      className='mt-5 py-4 px-2 text-xs  font-semibold rounded text-slate-300 hover:bg-white hover:bg-opacity-30'
+                    >
+                      {language.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             }
 
             <div className=" w-full flex flex-col items-center relative group ">
@@ -116,22 +140,20 @@ export const Header = () => {
                 onClick={() => setToggle(!toggle)}
               />
 
-              <div className="text-white pt-10 top-10 text-xs p-3 bg-black hidden absolute  group-hover:block   lg:right-0 z-50">
-                <div className="hover:bg-gray-800 py-4 px-2 w-full rounded ">
+              <div className="  top-10 text-xs p-2 bg-black hidden absolute  group-hover:block   lg:right-0 z-50">
+                <div className="hover:bg-gray-800 mt-5  text-xs font-semibold text-slate-200  py-4 px-2 w-full rounded ">
                   {user.user.email}
                 </div>
 
                 <Link to={'/account'}>
-                  <div className="hover:bg-gray-800 py-4 px-2 w-full rounded cursor-pointer ">
+                  <div className="hover:bg-gray-800  text-slate-200 text-xs  py-4 px-2 w-full font-semibold rounded cursor-pointer ">
                     Account
                   </div>
                 </Link>
 
-                <div>
-                  {/* <hr className="border-slate-700 p-2" /> */}
-                </div>
+                <div>{/* <hr className="border-slate-700 p-2" /> */}</div>
                 <div
-                  className="hover:bg-gray-800 py-4 px-2 rounded w-full cursor-pointer"
+                  className="hover:bg-gray-800 py-4  text-slate-200 text-xs font-semibold px-2 rounded w-full cursor-pointer"
                   onClick={() => {
                     signout();
                   }}
