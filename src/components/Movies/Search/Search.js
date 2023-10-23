@@ -9,13 +9,6 @@ const Search = () => {
 
   return (
     <div>
-      {/* <div className="absolute  -z-10">
-        <img
-          src={Background}
-          alt="logo"
-          className="h-screen w-screen object-cover"
-        />
-      </div> */}
       <SearchBar />
       {movies.movieSuggestions && (
         <MovieSuggestion movies={movies.movieSuggestions?.results} />
