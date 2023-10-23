@@ -30,7 +30,7 @@ const Profile = () => {
         <li
           className={`p-4 mx-2 ${
             tab === 'profile' && 'border-b-2'
-          } text-white text-xs cursor-pointer`}
+          } text-slate-200 text-sm font-semibold  cursor-pointer`}
           data-tab="profile"
           onClick={(e) => handleTabEvent(e)}
         >
@@ -39,16 +39,16 @@ const Profile = () => {
         <li
           className={`p-4 mx-2 ${
             tab === 'account' && 'border-b-2'
-          } text-white text-xs cursor-pointer`}
+          } text-slate-200 text-sm font-semibold cursor-pointer`}
           data-tab="account"
           onClick={(e) => handleTabEvent(e)}
         >
           Account
         </li>
         <li
-          className={`p-4 mx-2 text-xs ${
+          className={`p-4 mx-2  ${
             tab === 'settings' && 'border-b-2'
-          } text-white cursor-pointer`}
+          } text-slate-200 text-sm font-semibold  cursor-pointer`}
           data-tab="settings"
           onClick={(e) => handleTabEvent(e)}
         >
@@ -61,8 +61,8 @@ const Profile = () => {
           <div className="flex flex-col" id="tab1">
             <div className="border-2 border-slate-300  p-7 my-2 rounded">
               <Link to={'/profile'}>
-                <h4 className="font-bold text-lg text-white">Edit Profile </h4>
-                <p className="my-4 text-white">
+                <h4 className="text-slate-200 text-sm font-semibold ">Edit Profile </h4>
+                <p className="my-4 text-slate-200 text-sm font-semibold  ">
                   Edit your profile and more...{' '}
                   <FontAwesomeIcon icon={faAngleRight} />
                 </p>
@@ -75,10 +75,10 @@ const Profile = () => {
           <div className="flex flex-col" id="tab2">
             <div className="border-2 border-slate-300 p-7 my-2 rounded">
               <Link to={'/account/delete'}>
-                <h4 className="font-bold text-lg text-white">
+                <h4 className="text-slate-200 text-sm font-semibold ">
                   Delete Account{' '}
                 </h4>
-                <p className="my-4 text-white text-justify">
+                <p className="my-4 text-slate-200 text-sm font-semibold  text-justify">
                   Your streams account and all data releated to this account
                   will be permanently deleted{' '}
                   <FontAwesomeIcon icon={faAngleRight} />
@@ -87,7 +87,7 @@ const Profile = () => {
             </div>
             <div className="border-2 border-slate-300  p-7 my-2 rounded">
               <Link to={'#'} onClick={() => signout()}>
-                <h4 className="font-bold text-lg text-white">
+                <h4 className="text-slate-200 text-sm font-semibold ">
                   {' '}
                   <FontAwesomeIcon icon={faRightFromBracket} /> Signout{' '}
                 </h4>
@@ -99,7 +99,7 @@ const Profile = () => {
           <div className="flex flex-col" id="tab2">
             <div onClick={() => setLanguageOpt(!lanuageOpt)} className="border-2 border-slate-300 p-7 my-2 rounded lg:w-4/12">
               <div >
-                <h4 className="font-semibold text-xs text-white flex justify-between">
+                <h4 className="text-slate-200 text-sm font-semibold  flex justify-between">
                   <span> Preffered Language</span>
                   <FontAwesomeIcon className={`${lanuageOpt?'transform rotate-90':''}`} icon={faAngleRight} />
                 </h4>
