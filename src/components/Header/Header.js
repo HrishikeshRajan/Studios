@@ -117,13 +117,13 @@ export const Header = () => {
                     lang.name
                   }
                 </h4>
-                <ul className="w-48 right-0 p-2 bg-black hidden group-hover:block absolute top-10">
+                <ul className="w-48 right-0 pt-5 p-2 bg-black hidden group-hover:block absolute top-10">
                   {SUPPORTED_LANGUAGES.map((language, index) => (
                     <li
                       key={index}
                       onClick={() => handleLanguage(language.code, language.name)}
                   
-                      className='mt-5 py-4 px-2 text-xs  font-semibold rounded text-slate-300 hover:bg-white hover:bg-opacity-30'
+                      className='py-4 px-2 text-xs  font-semibold rounded text-slate-300 hover:bg-white hover:bg-opacity-30'
                     >
                       {language.name}
                     </li>
@@ -140,8 +140,8 @@ export const Header = () => {
                 onClick={() => setToggle(!toggle)}
               />
 
-              <div className="  top-10 text-xs p-2 bg-black hidden absolute  group-hover:block   lg:right-0 z-50">
-                <div className="hover:bg-gray-800 mt-5  text-xs font-semibold text-slate-200  py-4 px-2 w-full rounded ">
+              <div className=" pt-5 top-10 text-xs p-2 bg-black hidden absolute  group-hover:block   lg:right-0 z-50">
+                <div className="hover:bg-gray-800  text-xs font-semibold text-slate-200  py-4 px-2 w-full rounded ">
                   {user.user.email}
                 </div>
 
@@ -153,7 +153,7 @@ export const Header = () => {
 
                 <div>{/* <hr className="border-slate-700 p-2" /> */}</div>
                 <div
-                  className="hover:bg-gray-800 py-4  text-slate-200 text-xs font-semibold px-2 rounded w-full cursor-pointer"
+                  className="hover:bg-gray-800 py-4   text-slate-200 text-xs font-semibold px-2 rounded w-full cursor-pointer"
                   onClick={() => {
                     signout();
                   }}
