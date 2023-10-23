@@ -7,8 +7,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import useSignOut from '../../hooks/useSignout';
 import { SUPPORTED_LANGUAGES } from '../../utils/languageConstant';
+import { useDispatch } from 'react-redux';
+import { changeLanguage } from '../../utils/appConfigSlice';
 
 const Profile = () => {
+  const dispatch = useDispatch();
   const [tab, setTab] = useState('profile');
   const signout = useSignOut();
   const handleTabEvent = (e) => {
@@ -18,7 +21,9 @@ const Profile = () => {
     code: SUPPORTED_LANGUAGES[0].code,
     name: SUPPORTED_LANGUAGES[0].name,
   });
+
   const handleLanguage = (code, name) => {
+    dispatch(changeLanguage({ code, name }));
     setLang({ code, name });
   };
 
@@ -61,7 +66,9 @@ const Profile = () => {
           <div className="flex flex-col" id="tab1">
             <div className="border-2 border-slate-300  p-7 my-2 rounded">
               <Link to={'/profile'}>
-                <h4 className="text-slate-200 text-sm font-semibold ">Edit Profile </h4>
+                <h4 className="text-slate-200 text-sm font-semibold ">
+                  Edit Profile{' '}
+                </h4>
                 <p className="my-4 text-slate-200 text-sm font-semibold  ">
                   Edit your profile and more...{' '}
                   <FontAwesomeIcon icon={faAngleRight} />
@@ -88,7 +95,6 @@ const Profile = () => {
             <div className="border-2 border-slate-300  p-7 my-2 rounded">
               <Link to={'#'} onClick={() => signout()}>
                 <h4 className="text-slate-200 text-sm font-semibold ">
-                  {' '}
                   <FontAwesomeIcon icon={faRightFromBracket} /> Signout{' '}
                 </h4>
               </Link>
@@ -97,21 +103,31 @@ const Profile = () => {
         )}
         {tab === 'settings' && (
           <div className="flex flex-col" id="tab2">
-            <div onClick={() => setLanguageOpt(!lanuageOpt)} className="border-2 border-slate-300 p-7 my-2 rounded lg:w-4/12">
-              <div >
-                <h4 className="text-slate-200 text-sm font-semibold  flex justify-between">
+            <div
+              onClick={() => setLanguageOpt(!lanuageOpt)}
+              className="border-2 border-slate-300 p-7 my-2 rounded lg:w-4/12"
+            >
+              <div>
+                <h4 className="text-slate-200 text-sm font-semibold  flex justify-between select-none">
                   <span> Preffered Language</span>
-                  <FontAwesomeIcon className={`${lanuageOpt?'transform rotate-90':''}`} icon={faAngleRight} />
+                  <FontAwesomeIcon
+                    className={`${lanuageOpt ? 'transform rotate-90' : ''}`}
+                    icon={faAngleRight}
+                  />
                 </h4>
               </div>
 
               {lanuageOpt && (
-                <div className={`w-full mt-10 `} >
+                <div className={`w-full mt-10 `}>
                   <ul>
                     {SUPPORTED_LANGUAGES.map((language, index) => (
                       <li
                         key={index}
-                        className="text-white py-3 mx-2 text-sm font-semibold "
+                        className={`text-white py-3 mx-2 my-1 text-sm font-semibold rounded px-2 select-none hover:bg-slate-50 hover:bg-opacity-10 ${
+                          lang.code === language.code
+                            ? 'bg-slate-50 bg-opacity-25 '
+                            : ''
+                        } `}
                         onClick={() =>
                           handleLanguage(language.code, language.name)
                         }

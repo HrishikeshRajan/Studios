@@ -20,8 +20,7 @@ export const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const gpt = useSelector((store) => store.gpt.showGptSearch);
-  const [lang, setLang] = useState({code:SUPPORTED_LANGUAGES[2].code,name:SUPPORTED_LANGUAGES[2].name});
-  // const [lang, setLang] = useState(SUPPORTED_LANGUAGES[2].name);
+  const [lang, setLang] = useState({code:SUPPORTED_LANGUAGES[0].code,name:SUPPORTED_LANGUAGES[0].name});
 
   useAuthenticate();
 
@@ -29,7 +28,7 @@ export const Header = () => {
   const signout = useSignOut();
 
   const handleLanguage = (code,name) => {
-    // dispatch(changeLanguage(e.target.value));
+    dispatch(changeLanguage({code,name}));
     setLang({code,name});
   };
 
