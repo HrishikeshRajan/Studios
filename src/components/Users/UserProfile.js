@@ -7,7 +7,7 @@ const UserProfile = () => {
   return (
     <div>
       <Header />
-      <div className="relative bg-slate-950">
+      <div className="relative ">
         <div className="w-full md:pt-40 flex justify-center ">
           <Profile />
         </div>

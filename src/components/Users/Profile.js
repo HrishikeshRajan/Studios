@@ -14,7 +14,7 @@ const Profile = () => {
     setTab(e.target.getAttribute('data-tab'));
   };
   return (
-    <div className="w-screen px-10">
+    <div className="w-screen px-10 pt-20">
       <ul className="flex justify-start">
         <li
           className={`p-4 mx-2 ${
