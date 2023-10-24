@@ -28,6 +28,15 @@ export const LANG = {
       POPULAR_MOVIES:'Popular movies',
       TOP_RATED_MOVIES:'Top rated movies'
     },
+    User:{
+      PROFILE_TAB:{
+        TITLE:'Profile',
+        SUBTITLE_EDIT_PROFILE:'Edit Profile',
+        EDIT_PROFILE_DESCRIPTION:'Edit your profile and more...'
+      },
+      ACCOUNT_TAB:'Account',
+      PREFERENCE_TAB:'Preference'
+    },
     Search: 'Search',
     SearchPlaceholder: 'What would you like to watch today?',
     SearchResults:'Search results...'

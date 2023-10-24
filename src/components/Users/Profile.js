@@ -6,8 +6,8 @@ import {
   faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
 import useSignOut from '../../hooks/useSignout';
-import { SUPPORTED_LANGUAGES } from '../../utils/languageConstant';
-import { useDispatch } from 'react-redux';
+import { LANG, SUPPORTED_LANGUAGES } from '../../utils/languageConstant';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeLanguage } from '../../utils/appConfigSlice';
 
 const Profile = () => {
@@ -28,7 +28,8 @@ const Profile = () => {
   };
 
   const [lanuageOpt, setLanguageOpt] = useState(false);
-
+  const language = useSelector((store) => store.appConfig.language);
+  if (language === undefined) return;
   return (
     <div className="w-screen px-10 pt-20 lg:pt-0">
       <ul className="flex justify-start">
@@ -39,7 +40,7 @@ const Profile = () => {
           data-tab="profile"
           onClick={(e) => handleTabEvent(e)}
         >
-          Profile
+          {LANG[language.code].User.PROFILE_TAB.TITLE}
         </li>
         <li
           className={`p-4 mx-2 ${
@@ -48,7 +49,7 @@ const Profile = () => {
           data-tab="account"
           onClick={(e) => handleTabEvent(e)}
         >
-          Account
+          {LANG[language.code].User.ACCOUNT_TAB}
         </li>
         <li
           className={`p-4 mx-2  ${
@@ -57,7 +58,7 @@ const Profile = () => {
           data-tab="settings"
           onClick={(e) => handleTabEvent(e)}
         >
-          Settings
+       {LANG[language.code].User.PREFERENCE_TAB}
         </li>
       </ul>
 
@@ -67,10 +68,10 @@ const Profile = () => {
             <div className="border-2 border-slate-300  p-7 my-2 rounded">
               <Link to={'/profile'}>
                 <h4 className="text-slate-200 text-sm font-semibold ">
-                  Edit Profile{' '}
+                {LANG[language.code].User.PROFILE_TAB.SUBTITLE_EDIT_PROFILE}
                 </h4>
                 <p className="my-4 text-slate-200 text-sm font-semibold  ">
-                  Edit your profile and more...{' '}
+                {LANG[language.code].User.PROFILE_TAB.EDIT_PROFILE_DESCRIPTION}
                   <FontAwesomeIcon icon={faAngleRight} />
                 </p>
               </Link>
@@ -83,11 +84,11 @@ const Profile = () => {
             <div className="border-2 border-slate-300 p-7 my-2 rounded">
               <Link to={'/account/delete'}>
                 <h4 className="text-slate-200 text-sm font-semibold ">
-                  Delete Account{' '}
+                  Delete Account
                 </h4>
                 <p className="my-4 text-slate-200 text-sm font-semibold  text-justify">
                   Your streams account and all data releated to this account
-                  will be permanently deleted{' '}
+                  will be permanently deleted
                   <FontAwesomeIcon icon={faAngleRight} />
                 </p>
               </Link>
@@ -95,7 +96,7 @@ const Profile = () => {
             <div className="border-2 border-slate-300  p-7 my-2 rounded">
               <Link to={'#'} onClick={() => signout()}>
                 <h4 className="text-slate-200 text-sm font-semibold ">
-                  <FontAwesomeIcon icon={faRightFromBracket} /> Signout{' '}
+                  <FontAwesomeIcon icon={faRightFromBracket} /> Signout
                 </h4>
               </Link>
             </div>
@@ -109,7 +110,7 @@ const Profile = () => {
             >
               <div>
                 <h4 className="text-slate-200 text-sm font-semibold  flex justify-between select-none">
-                  <span> Preffered Language</span>
+                  <span> Preferred Language</span>
                   <FontAwesomeIcon
                     className={`${lanuageOpt ? 'transform rotate-90' : ''}`}
                     icon={faAngleRight}
