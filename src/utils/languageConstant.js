@@ -14,9 +14,10 @@ export const LANG = {
       AlreadyHaveAnAccount: 'Already have an account?',
     },
     Navbar: {
-      Home: 'HOME',
-      Search: 'SEARCH',
-      Account: 'ACCOUNT',
+      HOME: 'Home',
+      SEARCH: 'Search',
+      ACCOUNT: 'Account',
+      SIGN_OUT:'Sign out'
     },
     Search: 'Search',
     SearchPlaceholder: 'What would you like to watch today?',

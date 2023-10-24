@@ -27,8 +27,8 @@ export const Header = () => {
   const [toggle, setToggle] = useState(false);
   const signout = useSignOut();
 
-  const handleLanguage = (code,name) => {
-    dispatch(changeLanguage({code,name}));
+  const handleLanguage = (code, name) => {
+    dispatch(changeLanguage({ code, name }));
     // setLang({code,name});
   };
 
@@ -47,7 +47,7 @@ export const Header = () => {
 
   useEffect(() => {}, [gpt]);
   const language = useSelector((store) => store.appConfig.language);
-  
+
   return (
     <nav className="bg-black absolute  top-0 left-0 right-0 z-50">
       <div className="container mx-auto h-20 bg-black  100 px-5 py-2 lg:flex justify-between items-center z-10">
@@ -71,7 +71,7 @@ export const Header = () => {
                 } font-medium   mx-1 px-5 py-3 flex justify-center items-center `}
                 onClick={() => handleHomePageTab(NAVBAR_OPTIONS.Home)}
               >
-                <Link to={'/browse'}> Home </Link>
+                <Link to={'/browse'}> {LANG[language.code].Navbar.HOME}</Link>
               </li>
               <li
                 className={`${
@@ -84,36 +84,28 @@ export const Header = () => {
                 } font-medium  mx-1 px-5 py-3  flex justify-center items-center `}
                 onClick={() => handleMovieClick(NAVBAR_OPTIONS.Search)}
               >
-                <Link to={'/browse'}> Search</Link>
+                <Link to={'/browse'}>{LANG[language.code].Navbar.SEARCH}</Link>
               </li>
             </ul>
           </div>
         )}
 
-{
-
-  
-
-              <div className="flex px-3  mr-10 h-full relative  group items-center  ">
-                <h4 className="text-slate-200 text-xs ">
-                  {
-                    language.name
-                  }
-                </h4>
-                <ul className="w-48 mt-2 right-0 pt-5 p-2 bg-black hidden group-hover:block absolute top-10">
-                  {SUPPORTED_LANGUAGES.map((language, index) => (
-                    <li
-                      key={index}
-                      onClick={() => handleLanguage(language.code, language.name)}
-                  
-                      className='py-4 px-2 text-xs  font-semibold rounded text-slate-300 hover:bg-white hover:bg-opacity-30'
-                    >
-                      {language.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            }
+        {
+          <div className="flex px-3  mr-10 h-full relative  group items-center  ">
+            <h4 className="text-slate-200 text-xs ">{language.name}</h4>
+            <ul className="w-48 mt-2 right-0 pt-5 p-2 bg-black hidden group-hover:block absolute top-10">
+              {SUPPORTED_LANGUAGES.map((language, index) => (
+                <li
+                  key={index}
+                  onClick={() => handleLanguage(language.code, language.name)}
+                  className="py-4 px-2 text-xs  font-semibold rounded text-slate-300 hover:bg-white hover:bg-opacity-30"
+                >
+                  {language.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        }
 
         {user.user && (
           <div className="lg:justify-between hidden lg:flex">
@@ -136,7 +128,6 @@ export const Header = () => {
               </div>
             } */}
 
-
             <div className=" w-full flex flex-col items-center relative group ">
               <img
                 className="w-10 h-10 rounded-full"
@@ -152,7 +143,7 @@ export const Header = () => {
 
                 <Link to={'/account'}>
                   <div className="hover:bg-gray-800  text-slate-200 text-xs  py-4 px-2 w-full font-semibold rounded cursor-pointer ">
-                    Account
+                  {LANG[language.code].Navbar.ACCOUNT}
                   </div>
                 </Link>
 
@@ -163,7 +154,7 @@ export const Header = () => {
                     signout();
                   }}
                 >
-                  <FontAwesomeIcon icon={faRightFromBracket} /> Sign Out
+                  <FontAwesomeIcon icon={faRightFromBracket} />   {LANG[language.code].Navbar.SIGN_OUT}
                 </div>
               </div>
             </div>
