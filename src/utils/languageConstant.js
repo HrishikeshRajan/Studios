@@ -19,6 +19,10 @@ export const LANG = {
       ACCOUNT: 'Account',
       SIGN_OUT:'Sign out'
     },
+    BANNER:{
+      PLAY:'പ്ലേ',
+      MORE_INFO:'കൂടുതൽ വിവരങ്ങൾ'
+    },
     Search: 'Search',
     SearchPlaceholder: 'What would you like to watch today?',
     SearchResults:'Search results...'
