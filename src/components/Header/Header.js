@@ -49,7 +49,7 @@ export const Header = () => {
 
   return (
     <nav className="bg-black absolute  top-0 left-0 right-0 z-50">
-      <div className="container mx-auto h-20 bg-black  100 px-5 py-2 lg:flex items-center z-10">
+      <div className="container mx-auto h-20 bg-black  100 px-5 py-2 lg:flex justify-between items-center z-10">
         <div className="flex justify-center lg:justify-start">
           <Link to={'/browse'}>
             <img className="w-14  md:w-20 rounded-xl" src={logo} alt="logo" />
@@ -89,6 +89,28 @@ export const Header = () => {
           </div>
         )}
 
+{
+              <div className="flex px-3  mr-10 h-full relative  group items-center  ">
+                <h4 className="text-slate-200 text-xs ">
+                  {
+                    lang.name
+                  }
+                </h4>
+                <ul className="w-48 mt-2 right-0 pt-5 p-2 bg-black hidden group-hover:block absolute top-10">
+                  {SUPPORTED_LANGUAGES.map((language, index) => (
+                    <li
+                      key={index}
+                      onClick={() => handleLanguage(language.code, language.name)}
+                  
+                      className='py-4 px-2 text-xs  font-semibold rounded text-slate-300 hover:bg-white hover:bg-opacity-30'
+                    >
+                      {language.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            }
+
         {user.user && (
           <div className="lg:justify-between hidden lg:flex">
             {/* {
@@ -109,27 +131,7 @@ export const Header = () => {
                 </select>
               </div>
             } */}
-            {
-              <div className="flex px-3 mr-10  justify-center group items-center relative ">
-                <h4 className="text-slate-200 text-xs ">
-                  {
-                    lang.name
-                  }
-                </h4>
-                <ul className="w-48 right-0 pt-5 p-2 bg-black hidden group-hover:block absolute top-10">
-                  {SUPPORTED_LANGUAGES.map((language, index) => (
-                    <li
-                      key={index}
-                      onClick={() => handleLanguage(language.code, language.name)}
-                  
-                      className='py-4 px-2 text-xs  font-semibold rounded text-slate-300 hover:bg-white hover:bg-opacity-30'
-                    >
-                      {language.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            }
+
 
             <div className=" w-full flex flex-col items-center relative group ">
               <img
