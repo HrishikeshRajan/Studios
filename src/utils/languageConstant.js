@@ -13,8 +13,14 @@ export const LANG = {
       EnterPassword: 'Enter your password',
       AlreadyHaveAnAccount: 'Already have an account?',
     },
-    search: 'Search',
-    gptSearchPlaceholder: 'What would you like to watch today?',
+    Navbar: {
+      Home: 'HOME',
+      Search: 'SEARCH',
+      Account: 'ACCOUNT',
+    },
+    Search: 'Search',
+    SearchPlaceholder: 'What would you like to watch today?',
+    SearchResults:'Search results...'
   },
   ml: {
     SigninPage: {
@@ -30,8 +36,8 @@ export const LANG = {
       EnterPassword: 'നിങ്ങളുടെ പാസ്‌വേഡ് നൽകുക',
       AlreadyHaveAnAccount: 'ഇതിനകം ഒരു അക്കൗണ്ട് ഉണ്ടോ?',
     },
-    search: 'തിരയുക',
-    gptSearchPlaceholder: 'ഇന്ന് നിങ്ങൾ എന്താണ് കാണാൻ ആഗ്രഹിക്കുന്നത്?',
+    Search: 'തിരയുക',
+    SearchPlaceholder: 'ഇന്ന് നിങ്ങൾ എന്താണ് കാണാൻ ആഗ്രഹിക്കുന്നത്?',
   },
   hi: {
     SigninPage: {

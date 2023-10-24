@@ -8,7 +8,7 @@ import { addMovieSuggestions } from '../../../utils/movieSlice';
 // import GptMovieSuggestion from './GptMovieSuggestion';
 
 const SearchBar = () => {
-  const appConfig = useSelector((store) => store.appConfig);
+  // const appConfig = useSelector((store) => store.appConfig);
 
   const [suggestedMovies, setSuggestedMovies] = useState(null);
 
@@ -39,6 +39,8 @@ const SearchBar = () => {
       console.log('test best', error);
     }
   };
+  const language = useSelector((store) => store.appConfig.language);
+  if(language === undefined) return
 
   return (
     <div className=" text-center absolute top-32 z-50 w-full  flex justify-center ">
@@ -50,7 +52,7 @@ const SearchBar = () => {
         <input
           type="text"
           className="p-3  m-2 col-span-9"
-          placeholder={LANG[appConfig.language].gptSearchPlaceholder}
+          placeholder={LANG[language.code].SearchPlaceholder}
           ref={search}
         />
 
@@ -58,7 +60,7 @@ const SearchBar = () => {
           className=" bg-red-900 text-white m-2 rounded col-span-3"
           onClick={handleSearch}
         >
-          {LANG[appConfig.language].search}
+          {LANG[language.code].Search}
         </button>
       </form>
     </div>

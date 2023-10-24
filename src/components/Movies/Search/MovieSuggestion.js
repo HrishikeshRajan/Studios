@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IMG_CDN } from '../../../utils/constants';
+import { useSelector } from 'react-redux';
+import { LANG } from '../../../utils/languageConstant';
 
 const MovieSuggestion = ({ movies }) => {
-  const subString = (data) => {
-    let words = data.split(/\s+/);
-    let firstTenWords = words.slice(0, 10).join(' ') + '...';
-    return firstTenWords;
-  };
-
+  const language = useSelector((store) => store.appConfig.language);
+  if(language === undefined) return
   return (
     <div className="px-2  py-6 mt-32 w-full translate-x-0">
       <h1 className="text-xm md:text-lg mt-20 m-1 text-white">
-        Results for...
+        {LANG[language.code].SearchResults }
       </h1>
       <div className=" flex flex-wrap justify-center">
         {movies.map((movie) => {
