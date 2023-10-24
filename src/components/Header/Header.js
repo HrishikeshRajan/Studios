@@ -110,7 +110,7 @@ export const Header = () => {
               </div>
             } */}
             {
-              <div className="flex px-3 pr-10 mr-10  justify-center group items-center relative ">
+              <div className="flex px-3 mr-10  justify-center group items-center relative ">
                 <h4 className="text-slate-200 text-xs ">
                   {
                     lang.name
