@@ -7,17 +7,18 @@ import EditProfile from './Users/EditProfile';
 import DeleteUser from './Users/DeleteUser';
 import MovieView from './Movies/Movie/MovieView';
 import Trailer from './Movies/Movie/Trailer';
-
-
-
-
+import { Header } from './Header/Header';
 
 export const Body = () => {
-
   const allRoutes = createBrowserRouter([
     {
       path: '/',
-      element: <Login />,
+      element: (
+        <div>
+          <Header />
+          <Login />
+        </div>
+      ),
     },
     {
       path: '/browse',
@@ -30,22 +31,21 @@ export const Body = () => {
     {
       path: '/account',
       element: <UserProfile />,
-    
     },
     {
-      path: "/profile",
+      path: '/profile',
       element: <EditProfile />,
     },
     {
-      path: "/account/delete",
+      path: '/account/delete',
       element: <DeleteUser />,
     },
     {
-      path: "/movie/:id",
+      path: '/movie/:id',
       element: <MovieView />,
     },
     {
-      path: "/trailer/:id/:title",
+      path: '/trailer/:id/:title',
       element: <Trailer />,
     },
   ]);

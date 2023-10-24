@@ -2,7 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const appConfigSlice = createSlice({
   name: 'appConfig',
-  initialState: { language: 'en' },
+  initialState: {
+    language: { code: 'en', language: 'English' },
+  },
   reducers: {
     changeLanguage: (state, action) => {
       state.language = action.payload;
