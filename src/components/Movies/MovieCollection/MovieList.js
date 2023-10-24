@@ -1,4 +1,3 @@
-
 import React, { useCallback, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -42,41 +41,42 @@ const MovieList = ({ title, movies }) => {
   if (movies === null) return;
 
   return (
-    <section >
-      <div className='mb-12'>
-      <h3 className='text-sm lg:text-xl font-bold text-white ml-5 lg:ml-10 p-4 '>{title}</h3>
-      <div className="flex justify-between relative   ">
-      
-        <div>
-          <button
-            id="moveLeft"
-            onClick={scrollPrev}
-            disabled={prevBtnDisabled}
-            className={`p-3 h-full w-10 z-10  bg-black bg-opacity-30 hover:bg-opacity-60  text-white absolute top-1/2 left-0 transform -translate-y-1/2 rounded shadow-md `}
-          >
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-          <button
-            onClick={scrollNext}
-            disabled={nextBtnDisabled}
-            className=" p-3 h-full  z-10   bg-black bg-opacity-30 hover:bg-opacity-60 text-white  absolute right-0 top-1/2 transform -translate-y-1/2 rounded shadow-md "
-          >
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-        </div>
+    <section>
+      <div className="mb-12">
+        <h3 className="text-sm lg:text-xl font-bold text-white ml-5 lg:ml-10 p-4 ">
+          {title}
+        </h3>
+        <div className="flex justify-between relative   ">
+          <div>
+            <button
+              id="moveLeft"
+              onClick={scrollPrev}
+              disabled={prevBtnDisabled}
+              className={`p-3 h-full w-10 z-10  bg-black bg-opacity-30 hover:bg-opacity-60  text-white absolute top-1/2 left-0 transform -translate-y-1/2 rounded shadow-md `}
+            >
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <button
+              onClick={scrollNext}
+              disabled={nextBtnDisabled}
+              className=" p-3 h-full  z-10   bg-black bg-opacity-30 hover:bg-opacity-60 text-white  absolute right-0 top-1/2 transform -translate-y-1/2 rounded shadow-md "
+            >
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+          </div>
 
-        <div className="embla overflow-hidden" ref={emblaRef}>
-          <ul className={`flex ml-0  embla__container`}>
-            {movies.map((movie) => (
-              <MovieCard
-                title={movie.title}
-                id={movie.id}
-                moviePoster={movie.poster_path}
-              />
-            ))}
-          </ul>
+          <div className="embla overflow-hidden" ref={emblaRef}>
+            <ul className={`flex ml-0  embla__container`}>
+              {movies.map((movie) => (
+                <MovieCard
+                  title={movie.title}
+                  id={movie.id}
+                  moviePoster={movie.poster_path}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );

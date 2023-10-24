@@ -26,7 +26,7 @@ const VideoTitle = (props) => {
           >
             <span className='mx-2 font-bold text-sm'> {LANG[language.code].BANNER.PLAY }</span><FontAwesomeIcon icon={faPlay} beat />
           </button>
-          <Link to={'/movie/' + props.id} className="flex flex-col h-10   p-2">
+          <Link to={'/movie/' + props.id} className="flex flex-col h-10 p-2">
             <button className=" text-slate-50 mr-1  text-xs md:font-thin h-10  hover:bg-opacity-100">
               <FontAwesomeIcon
                 icon={faCircleInfo}

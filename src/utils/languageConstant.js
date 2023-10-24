@@ -20,8 +20,13 @@ export const LANG = {
       SIGN_OUT:'Sign out'
     },
     BANNER:{
-      PLAY:'പ്ലേ',
-      MORE_INFO:'കൂടുതൽ വിവരങ്ങൾ'
+      PLAY:'Play',
+      MORE_INFO:'Info'
+    },
+    MovieListTitles:{
+      NOW_PLAYING_MOVIES:'Now playing movies',
+      POPULAR_MOVIES:'Popular movies',
+      TOP_RATED_MOVIES:'Top rated movies'
     },
     Search: 'Search',
     SearchPlaceholder: 'What would you like to watch today?',
