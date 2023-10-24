@@ -30,6 +30,7 @@ const Profile = () => {
   const [lanuageOpt, setLanguageOpt] = useState(false);
   const language = useSelector((store) => store.appConfig.language);
   if (language === undefined) return;
+
   return (
     <div className="w-screen px-10 pt-20 lg:pt-0">
       <ul className="flex justify-start">
@@ -49,7 +50,7 @@ const Profile = () => {
           data-tab="account"
           onClick={(e) => handleTabEvent(e)}
         >
-          {LANG[language.code].User.ACCOUNT_TAB}
+          {LANG[language.code].User.AccountTab.TITLE}
         </li>
         <li
           className={`p-4 mx-2  ${
@@ -58,7 +59,7 @@ const Profile = () => {
           data-tab="settings"
           onClick={(e) => handleTabEvent(e)}
         >
-       {LANG[language.code].User.PREFERENCE_TAB}
+       {LANG[language.code].User.PREFERENCE_TAB.TITLE}
         </li>
       </ul>
 
@@ -84,11 +85,10 @@ const Profile = () => {
             <div className="border-2 border-slate-300 p-7 my-2 rounded">
               <Link to={'/account/delete'}>
                 <h4 className="text-slate-200 text-sm font-semibold ">
-                  Delete Account
+                {LANG[language.code].User.AccountTab.SUBTITLE_DELETE_ACCOUNT}
                 </h4>
                 <p className="my-4 text-slate-200 text-sm font-semibold  text-justify">
-                  Your streams account and all data releated to this account
-                  will be permanently deleted
+                {LANG[language.code].User.AccountTab.DESCRIPTION_DELETE_ACCOUNT}
                   <FontAwesomeIcon icon={faAngleRight} />
                 </p>
               </Link>
@@ -96,7 +96,7 @@ const Profile = () => {
             <div className="border-2 border-slate-300  p-7 my-2 rounded">
               <Link to={'#'} onClick={() => signout()}>
                 <h4 className="text-slate-200 text-sm font-semibold ">
-                  <FontAwesomeIcon icon={faRightFromBracket} /> Signout
+                  <FontAwesomeIcon icon={faRightFromBracket} />   {LANG[language.code].User.AccountTab.SIGN_OUT}
                 </h4>
               </Link>
             </div>
@@ -110,7 +110,7 @@ const Profile = () => {
             >
               <div>
                 <h4 className="text-slate-200 text-sm font-semibold  flex justify-between select-none">
-                  <span> Preferred Language</span>
+                  <span>   {LANG[language.code].User.PREFERENCE_TAB.SUBTITLE_PREFERRED_LANGUAGE}</span>
                   <FontAwesomeIcon
                     className={`${lanuageOpt ? 'transform rotate-90' : ''}`}
                     icon={faAngleRight}

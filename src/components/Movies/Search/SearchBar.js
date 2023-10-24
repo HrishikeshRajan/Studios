@@ -52,7 +52,7 @@ const SearchBar = () => {
         <input
           type="text"
           className="p-3  m-2 col-span-9"
-          placeholder={LANG[language.code].SearchPlaceholder}
+          placeholder={LANG[language.code].searchMovies.SearchPlaceholder}
           ref={search}
         />
 
@@ -60,7 +60,7 @@ const SearchBar = () => {
           className=" bg-red-900 text-white m-2 rounded col-span-3"
           onClick={handleSearch}
         >
-          {LANG[language.code].Search}
+          {LANG[language.code].searchMovies.Search}
         </button>
       </form>
     </div>

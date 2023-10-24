@@ -5,10 +5,13 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { getRunTimeInHours, extractYear } from '../../../utils/movieDetails';
 import { Link } from 'react-router-dom';
 import { encodeURI } from '../../../utils/uriEncoding';
+import { LANG } from '../../../utils/languageConstant';
 
 const MovieDescription = () => {
   const movie = useSelector((store) => store.movies.selectedMovie);
+  const language = useSelector((store) => store.appConfig.language);
   if (movie === null) return;
+
 
   const trailerUri = '/trailer/' + movie.id + '/' + movie.title;
   const modifiedTrailerUri = encodeURI(trailerUri);
@@ -57,7 +60,7 @@ const MovieDescription = () => {
       <div className='flex justify-center lg:justify-start lg:px-10'>
         <Link to={modifiedTrailerUri}>
           <button className="p-3 mt-10  text-xs md:text-lg font-bold border-2 rounded hover:bg-white hover:text-black">
-            <FontAwesomeIcon icon={faPlay} /> Trailer
+            <FontAwesomeIcon icon={faPlay} /> {LANG[language.code].movieView.TRAILER}
           </button>
         </Link>
       </div>

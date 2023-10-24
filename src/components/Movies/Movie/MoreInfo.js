@@ -1,8 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { LANG } from '../../../utils/languageConstant';
 
 const MoreInfo = () => {
   const movie = useSelector((store) => store.movies);
+  const language = useSelector((store) => store.appConfig.language);
   if (
     movie === null ||
     movie.selectedMovie === null ||
@@ -12,7 +14,7 @@ const MoreInfo = () => {
 
   return (
     <div className="text-white px-10 absolute mt-20 w-full">
-      <h3 className="font-bold text-center">More Info</h3>
+      <h3 className="font-bold text-center">{LANG[language.code].movieView.MORE_INFO}</h3>
 
       <div>
         <ul>
