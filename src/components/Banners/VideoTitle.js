@@ -19,8 +19,9 @@ const VideoTitle = (props) => {
   if (trailer === null) return null;
   if (language === undefined) return;
   return (
-    <div className=" bg-gradient-to-r from-black  w-full    h-full absolute  z-10 flex flex-col justify-center  item-end md:flex-row md:items-center">
+    <div className=" bg-gradient-to-r  from-black  w-full    h-full absolute  z-10 flex flex-col justify-center  item-end md:flex-row md:items-center">
       {play && (
+        
         <div className=" absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 bg-black   z-50">
          <span className='absolute text-white right-1 top-1 cursor-pointer ' onClick={()=> setPlay(!play)}><FontAwesomeIcon icon={faXmark} size="lg" /></span>
           <iframe
