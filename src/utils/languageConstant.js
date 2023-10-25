@@ -40,6 +40,7 @@ export const LANG = {
         DESCRIPTION_DELETE_ACCOUNT:
           'Your streams account and all data releated to this account will be permanently deleted',
         SIGN_OUT: 'Sign out',
+        CONFIRM_PASSWORD:'Confirm Password'
       },
       PREFERENCE_TAB: {
         TITLE: 'User Preference',
@@ -98,6 +99,7 @@ export const LANG = {
         DESCRIPTION_DELETE_ACCOUNT:
           'ഈ അക്കൗണ്ടുമായി ബന്ധപ്പെട്ട നിങ്ങളുടെ എല്ലാ ഡാറ്റയും ഇല്ലാതാക്കപ്പെടും',
         SIGN_OUT: 'സൈൻ ഔട്ട്',
+        CONFIRM_PASSWORD:'പാസ്വേഡ് സ്ഥിരീകരിക്കുക'
       },
       PREFERENCE_TAB: {
         TITLE: 'യൂസർ  പ്രീഫെറെൻസ്',
@@ -116,20 +118,63 @@ export const LANG = {
   },
   hi: {
     SigninPage: {
-      Signin: 'साइन इन करें',
-      EnterEmailAddress: 'अपना ईमेल पता डालें',
-      EnterPassword: 'अपना पासवर्ड डालें',
-      NewToCompany: 'खाता नहीं है?',
+      Signin: 'दाखिल करना',
+      EnterEmailAddress: 'ईमेल',
+      EnterPassword: 'पासवर्ड',
+      NewToCompany: "कोई खाता नहीं है?",
     },
     SignupPage: {
-      Signup: 'साइन अप करें',
-      EnterFullname: 'अपना पूरा नाम डालें',
-      EnterEmailAddress: 'अपना ईमेल पता डालें',
-      EnterPassword: 'अपना पासवर्ड डालें',
-      AlreadyHaveAnAccount: 'पहले से ही खाता है?',
+      Signup: 'साइन अप',
+      EnterFullname: 'पूरा नाम',
+      EnterEmailAddress: 'ईमेल',
+      EnterPassword: 'पासवर्ड',
+      AlreadyHaveAnAccount: ' क्या आपके पास पहले से एक खाता मौजूद है?',
     },
-    search: 'खोजें',
-    gptSearchPlaceholder: 'आज क्या देखना चाहेंगे?',
+    Navbar: {
+      HOME: 'घर',
+      SEARCH: 'खोज',
+      ACCOUNT: 'खाता',
+      SIGN_OUT: 'साइन आउट',
+    },
+    BANNER: {
+      PLAY: 'खेल',
+      MORE_INFO: 'जानकारी',
+    },
+    MovieListTitles: {
+      NOW_PLAYING_MOVIES: 'अभी फ़िल्में चल रही हैं',
+      POPULAR_MOVIES: 'लोकप्रिय फिल्में',
+      TOP_RATED_MOVIES: 'शीर्ष रेटेड फिल्में',
+    },
+    User: {
+      PROFILE_TAB: {
+        TITLE: 'प्रोफ़ाइल',
+        SUBTITLE_EDIT_PROFILE: 'प्रोफ़ाइल संपादित करें',
+        EDIT_PROFILE_DESCRIPTION: 'अपनी प्रोफ़ाइल संपादित करें और भी बहुत कुछ...',
+      },
+      AccountTab: {
+        TITLE: 'खाता',
+        SUBTITLE_DELETE_ACCOUNT: 'खाता हटा दो',
+        DESCRIPTION_DELETE_ACCOUNT:
+          'इस खाते से संबंधित आपका सभी डेटा स्थायी रूप से हटा दिया जाएगा',
+        SIGN_OUT: 'साइन आउट',
+        CONFIRM_PASSWORD:'पासवर्ड की पुष्टि कीजिये'
+      },
+      PREFERENCE_TAB: {
+        TITLE: 'उपयोगकर्ता प्राथमिकता',
+        SUBTITLE_PREFERRED_LANGUAGE: 'भाषा प्राथमिकता',
+      },
+    },
+
+    searchMovies: {
+      Search: 'खोज',
+      SearchPlaceholder: 'आज आप क्या देखना चाहेंगे?',
+      SearchResults: 'खोज के परिणाम...',
+    },
+    movieView: {
+      TRAILER: 'ट्रेलर',
+      MORE_INFO: 'और जानकारी',
+    },
+  
   },
 };
 

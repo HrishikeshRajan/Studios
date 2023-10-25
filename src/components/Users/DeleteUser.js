@@ -9,17 +9,18 @@ import {
 } from 'firebase/auth';
 import { auth } from '../../utils/firbase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCircleExclamation,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
+import { LANG } from '../../utils/languageConstant';
 
 const DeleteUser = () => {
   const [msgError, setMsgError] = useState(null);
 
   const password = useRef(null);
-
+  const language = useSelector((store) => store.appConfig.language);
+  if (language === undefined) return;
   const handleSaveForm = async () => {
-    const errors = true
+    const errors = true;
     setMsgError(errors);
 
     if (errors) return;
@@ -56,7 +57,7 @@ const DeleteUser = () => {
         <div className="flex w-full flex-col">
           <div className="w-full text-center">
             <h1 className="text-white font-bold text-3xl my-5">
-              Delete Account
+              {LANG[language.code].User.AccountTab.SUBTITLE_DELETE_ACCOUNT}
             </h1>
           </div>
           <div className="w-full h-full flex justify-center  ">
@@ -79,11 +80,11 @@ const DeleteUser = () => {
                   {msgError} <FontAwesomeIcon icon={faCircleExclamation} />
                 </p>
               )}
-          
+
               <input
                 type="password"
                 name="password"
-                placeholder="Enter your password"
+                placeholder={LANG[language.code].SignupPage.EnterPassword}
                 ref={password}
                 className="p-2 my-2 w-full bg-slate-700"
               />
@@ -93,7 +94,7 @@ const DeleteUser = () => {
                 className="p-2 my-2 bg-red-600 font-medium rounded-sm text-white"
                 onClick={handleSaveForm}
               >
-                Confirm Password
+                {LANG[language.code].User.AccountTab.CONFIRM_PASSWORD}
               </button>
             </form>
           </div>
