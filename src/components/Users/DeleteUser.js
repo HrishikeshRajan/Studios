@@ -53,7 +53,7 @@ const DeleteUser = () => {
     <div className="bg-gray-950">
       <Header />
 
-      <div className="w-screen  h-screen flex flex-col justify-center">
+      <div className="w-screen  h-screen  flex flex-col justify-center">
         <div className="flex w-full flex-col">
           <div className="w-full text-center">
             <h1 className="text-white font-bold text-3xl my-5">
@@ -72,7 +72,7 @@ const DeleteUser = () => {
               action=""
               method="post"
               onSubmit={(e) => e.preventDefault()}
-              className=" flex flex-col text-white w-4/12 p-2 bg-black"
+              className=" flex flex-col text-white w-full px-4 lg:w-4/12 p-2 bg-black"
             >
               {msgError && (
                 <p className="text-red-700 border-1 p-2 border-red-600 bg-red-200">
