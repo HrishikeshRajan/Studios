@@ -23,7 +23,7 @@ const Trailer = () => {
     <div className="text-white  w-full h-full  flex justify-center items-center relative group">
       <button
         className="absolute right-52  bottom-2 hidden group-hover:flex text-white z-50  "
-        data-tooltip-target="tooltip-default"
+        data-tooltip-target=""
         onClick={moveBack}
       >
         <FontAwesomeIcon icon={faXmark} size="lg" />
