@@ -74,6 +74,7 @@ export const Login = () => {
               type="text"
               name="fullname"
               ref={fullname}
+              data-testid='fullname'
               placeholder={LANG[language.code].SignupPage.EnterFullname}
               className={`p-2 my-2 w-full bg-slate-700 ${error && ' border-2 border-red-500' }`}
             />
@@ -83,6 +84,7 @@ export const Login = () => {
             type="email"
             name="email"
             ref={email}
+            data-testid='email'
             placeholder={LANG[language.code].SignupPage.EnterEmailAddress}
             className={`p-2 my-2 w-full bg-slate-700 ${error && ' border-2 border-red-500' }`}
           />
@@ -90,6 +92,7 @@ export const Login = () => {
             type="text"
             ref={password}
             name="password"
+            data-testid='password'
             placeholder={LANG[language.code].SignupPage.EnterPassword}
             className={`p-2 my-2 w-full bg-slate-700 ${error && ' border-2 border-red-500' }`}
           />
