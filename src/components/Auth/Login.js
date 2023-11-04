@@ -105,7 +105,7 @@ export const Login = () => {
 
           <p className="font-normal mt-5 py-4">
             {LogginForm ?  LANG[language.code].SigninPage.NewToCompany : LANG[language.code].SignupPage.AlreadyHaveAnAccount}
-            <span onClick={() => handleForm()} className="cursor-pointer underline ml-2 font-bold text-md">
+            <span data-testid={"authToggle"} onClick={() => handleForm()} className="cursor-pointer underline ml-2 font-bold text-md">
               {LogginForm ? LANG[language.code].SignupPage.Signup : LANG[language.code].SigninPage.Signin}
             </span>
           </p>
